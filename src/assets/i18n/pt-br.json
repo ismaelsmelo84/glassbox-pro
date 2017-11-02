@@ -1,0 +1,103 @@
+{
+  "HOME": "Dashboard",
+
+  "EMAIL": "Notificações",
+
+  "COMPONENTS": "Componentes",
+    "ACCORDION": "Acordeão",
+    "ALERT": "Alertas",
+    "BUTTONS": "Botões",
+    "SBUTTONS": "Sub-botões",
+    "CAROUSEL": "Carrocel",
+    "COLLAPSE": "Colapso",
+    "DATEPICKER": "Seletor de data",
+    "DROPDOWN": "Dropdown",
+    "MODAL": "Modal",
+    "PAGINATION": "Paginação",
+    "POPOVER": "Popover",
+    "PROGRESS": "Barras de progresso",
+    "RATING": "Rating",
+    "TABS": "Tabs",
+    "TIMEPICKER": "Timepicker",
+    "TOOLTIP": "Tooltip",
+    "TYPEAHEAD": "Typeahead",
+    "SPINNERS": "Spinners",
+
+  "ICONS": "Icones",
+    "LINEA": "Lineares",
+    "FONTAWESOME": "Fontes",
+    "SLI": "Simples e Linhas",
+
+  "TASKBOARD": "Taskboard",
+
+  "CARDS": "Cartes",
+    "BASIC": "Básico",
+    "PORTLETS": "Portal",
+    "DRAGGABLE": "Arrastável",
+
+  "FORMS": "Formulários",
+    "MASKS": "Máscaras",
+    "EDITOR": "Editor",
+    "VALIDATION": "Validação",
+    "UPLOAD": "Upload",
+    "TREE": "Árvore",
+
+  "TABLES": "Tabelas",
+    "RESPONSIVE": "Responsivo",
+
+  "DATATABLES": "Base de dados",
+    "FULLSCREEN": "Tela cheia",
+    "EDITING": "Edição",
+    "FILTER": "Filtros",
+    "PAGING": "Paginação",
+    "PINNING": "Fixo",
+    "SELECTION": "Seleção",
+    "SORTING": "Ordenação",
+
+  "CHARTS": "Gráficos",
+    "BAR": "Barras",
+    "PIE": "Pizza",
+    "LINE": "Linhas",
+    "MISC": "Outros",
+
+  "MAPS": "Mapas",
+    "GOOGLE": "Google",
+
+  "PAGES": "Páginas",
+    "INVOICE": "Fatura",
+    "FORUM": "Forum",
+    "TIMELINE": "Linha cronológica",
+    "ACTIVITY": "Atividades",
+    "PRICING": "Preço",
+    "BLANK": "Em branco",
+
+  "LANDING": "Aterrisagem",
+
+  "AUTHENTICATION": "Autenticação",
+    "SIGNIN": "Entrar",
+    "SIGNUP": "Cadastrar",
+    "FORGOT": "Esqueci a senha",
+    "LOCKSCREEN": "Tela de bloqueio",
+
+  "ERROR": "Erros",
+    "404": "404",
+    "500": "500",
+    "503": "503",
+
+  "CALENDAR": "Calendário",
+
+  "MEDIA": "Mídias",
+    "GRID": "Grid",
+    "TILE": "Telha",
+    "LIST": "Lista",
+
+  "WIDGETS": "Widgets",
+
+  "SOCIAL": "Social",
+
+  "DOCS": "Documentação",
+
+  "MENU": "Menu",
+  "PORTFOLIO": "Portfólio",
+  "TIME": "Time"
+}

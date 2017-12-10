@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import * as shape from 'd3-shape';
 import { colorSets  } from '@swimlane/ngx-charts/release/utils/color-sets';
 import {
-  single,
+  single, sistemas, dispersaoSprints, capacidade,
   generateData
 } from '../shared/chartData';
 
@@ -14,6 +14,9 @@ import {
 
 export class DashboardPortfolioComponent {
   single: any[];
+  sistemas: any[];
+  capacidade: any[];
+  dispersaoSprints: any;
   graph: {
     links: any[],
     nodes: any[]
@@ -60,9 +63,45 @@ export class DashboardPortfolioComponent {
   gaugeValue = 50; // linear gauge value
   gaugePreviousValue = 70;
 
+  // MAPA DE APLICAÇÕES
+  sis_tooltipDisabled = false;
+  sis_colorScheme = {
+    domain: [
+      '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
+    ]
+  };
+
+  // DISPERSÃO
+  dis_view: any;
+  dis_showXAxis = true;
+  dis_showYAxis = true;
+  dis_showXAxisLabel = true;
+  dis_tooltipDisabled = false;
+  dis_xAxisLabel = 'Esforço';
+  dis_showYAxisLabel = true;
+  dis_yAxisLabel = 'Taxa de Entrega';
+  dis_showGridLines = true;
+  dis_roundDomains = false;
+  dis_maxRadius = 10;
+  dis_minRadius = 3;
+  dis_colorScheme = {
+    domain: [
+      '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
+    ]
+  };
+  dis_schemeType = 'ordinal';
+  dis_autoScale = true;
+
+  // CAPACIDADE
+  cap_colorScheme = {
+    domain: [
+      '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
+    ]
+  };
+
   constructor() {
     Object.assign(this, {
-      single
+      single, sistemas, dispersaoSprints, capacidade
     });
     this.dateData = generateData(5, false);
   }

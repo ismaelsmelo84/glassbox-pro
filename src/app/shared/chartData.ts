@@ -1,33 +1,404 @@
+export const termometro = [
+  {
+    name: '1',
+    value: 5.5
+  },
+  {
+    name: '5',
+    value: 5.7
+  },
+  {
+    name: '9',
+    value: 6.0
+  },
+  {
+    name: '13',
+    value: 5.8
+  },
+  {
+    name: '17',
+    value: 6.2
+  }
+];
+
+export const satisfacaoUsuario = [
+  {
+    name: 'Bom',
+    value: 23
+  },
+  {
+    name: 'Regular',
+    value: 3
+  },
+  {
+    name: 'Ruim',
+    value: 1
+  }
+];
+
+export const expectativaValor = [
+  {
+    name: 'Alto',
+    value: 26
+  },
+  {
+    name: 'Regular',
+    value: 2
+  },
+  {
+    name: 'Baixo',
+    value: 0
+  }
+];
+
+export const maturidade = [
+  {
+    name: 'Organização',
+    value: 20
+  },
+  {
+    name: 'Negócio',
+    value: 24
+  },
+  {
+    name: 'Processo',
+    value: 22
+  },
+  {
+    name: 'Equipe',
+    value: 31
+  },
+  {
+    name: 'Tecnologia',
+    value: 25
+  },
+  {
+    name: 'Infraestrutura',
+    value: 30
+  }
+];
+
 export const single = [
   {
-    name: 'Germany',
-    value: 40
+    name: 'ACEITO',
+    value: 51.5
   },
   {
-    name: 'USA',
-    value: 49
+    name: 'NÃO ACEITO',
+    value: 3.0
+  }
+];
+
+export const eficiencia = [
+  {
+    name: 'R$/PF',
+    value: 1557.20
   },
   {
-    name: 'France',
-    value: 36
+    name: 'Horas/PF',
+    value: 12.5
   },
   {
-    name: 'United Kingdom',
-    value: 36
+    name: 'PF/PM',
+    value: 3.02
   },
   {
-    name: 'Spain',
-    value: 33
+    name: 'PF/Sprint',
+    value: 33.5
   },
   {
-    name: 'Italy',
-    value: 35
+    name: 'Dias (Leadtime)',
+    value: 3.1
+  },
+  {
+    name: 'Dias (Saída)',
+    value: 5.6
+  }
+];
+
+export const consolidado = [
+  {
+    name: 'ACEITO',
+    value: 51.5
+  },
+  {
+    name: 'NÃO ACEITO',
+    value: 3.0
+  }
+];
+
+export const atingimentoMetas = [
+  {
+    name: 'ACEITO',
+    value: 51.5
+  },
+  {
+    name: 'NÃO ACEITO',
+    value: 3.0
+  }
+];
+
+export const qualidade = [
+  {
+    name: 'HOMOLOGAÇÃO',
+    value: 2
+  },
+  {
+    name: 'PRODUÇÃO',
+    value: 3
+  }
+];
+
+export const custoPf = [
+  {
+    "name": 1,
+    "series": [
+      {
+        "value": 852,
+        "name": "Desenvolvimento"
+      },
+      {
+        "value": 223,
+        "name": "Qualidade"
+      },
+      {
+        "value": 159,
+        "name": "Outros"
+      }
+    ]
+  },
+  {
+    "name": 2,
+    "series": [
+      {
+        "value": 840,
+        "name": "Desenvolvimento"
+      },
+      {
+        "value": 230,
+        "name": "Qualidade"
+      },
+      {
+        "value": 115,
+        "name": "Outros"
+      }
+    ]
+  },
+  {
+    "name": 3,
+    "series": [
+      {
+        "value": 924,
+        "name": "Desenvolvimento"
+      },
+      {
+        "value": 245,
+        "name": "Qualidade"
+      },
+      {
+        "value": 0,
+        "name": "Outros"
+      }
+    ]
+  },
+  {
+    "name": 4,
+    "series": [
+      {
+        "value": 874,
+        "name": "Desenvolvimento"
+      },
+      {
+        "value": 320,
+        "name": "Qualidade"
+      },
+      {
+        "value": 0,
+        "name": "Outros"
+      }
+    ]
+  },
+  {
+    "name": 5,
+    "series": [
+      {
+        "value": 768,
+        "name": "Desenvolvimento"
+      },
+      {
+        "value": 267,
+        "name": "Qualidade"
+      },
+      {
+        "value": 0,
+        "name": "Outros"
+      }
+    ]
+  }
+];
+
+export const produtividade = [
+  {
+    "name": "Normal",
+    "series": [
+      {
+        "value": 14,
+        "name": "1"
+      },
+      {
+        "value": 13.2,
+        "name": "2"
+      },
+      {
+        "value": 14.5,
+        "name": "3"
+      },
+      {
+        "value": 14.5,
+        "name": "4"
+      },
+      {
+        "value": 15.5,
+        "name": "5"
+      }
+    ]
+  },
+  {
+    "name": "Acumulado",
+    "series": [
+      {
+        "value": 12,
+        "name": "1"
+      },
+      {
+        "value": 12.2,
+        "name": "2"
+      },
+      {
+        "value": 13.5,
+        "name": "3"
+      },
+      {
+        "value": 13.8,
+        "name": "4"
+      },
+      {
+        "value": 14.3,
+        "name": "5"
+      }
+    ]
   }
 ];
 
 export const multi = [
   {
-    name: 'Germany',
+    "name": "Normal",
+    "series": [
+      {
+        "value": 14,
+        "name": "1"
+      },
+      {
+        "value": 13.2,
+        "name": "2"
+      },
+      {
+        "value": 14.5,
+        "name": "3"
+      },
+      {
+        "value": 14.5,
+        "name": "4"
+      },
+      {
+        "value": 15.5,
+        "name": "5"
+      }
+    ]
+  },
+  {
+    "name": "Acumulado",
+    "series": [
+      {
+        "value": 12,
+        "name": "1"
+      },
+      {
+        "value": 12.2,
+        "name": "2"
+      },
+      {
+        "value": 13.5,
+        "name": "3"
+      },
+      {
+        "value": 13.8,
+        "name": "4"
+      },
+      {
+        "value": 14.3,
+        "name": "5"
+      }
+    ]
+  }
+];
+
+export const txEntrega = [
+  {
+    "name": "Normal",
+    "series": [
+      {
+        "value": 2.3,
+        "name": "1"
+      },
+      {
+        "value": 2.3,
+        "name": "2"
+      },
+      {
+        "value": 2.4,
+        "name": "3"
+      },
+      {
+        "value": 2.8,
+        "name": "4"
+      },
+      {
+        "value": 2.9,
+        "name": "5"
+      }
+    ]
+  },
+  {
+    "name": "Acumulado",
+    "series": [
+      {
+        "value": 2.3,
+        "name": "1"
+      },
+      {
+        "value": 2.3,
+        "name": "2"
+      },
+      {
+        "value": 2.3,
+        "name": "3"
+      },
+      {
+        "value": 2.4,
+        "name": "4"
+      },
+      {
+        "value": 2.5,
+        "name": "5"
+      }
+    ]
+  }
+];
+
+export const velocidade = [
+  {
+    name: 'Sprint 1',
     series: [
       {
         name: '2010',
@@ -36,15 +407,11 @@ export const multi = [
       {
         name: '2000',
         value: 36
-      },
-      {
-        name: '1990',
-        value: 31
       }
     ]
   },
   {
-    name: 'USA',
+    name: 'Sprint 2',
     series: [
       {
         name: '2010',
@@ -53,15 +420,11 @@ export const multi = [
       {
         name: '2000',
         value: 45
-      },
-      {
-        name: '1990',
-        value: 37
       }
     ]
   },
   {
-    name: 'France',
+    name: 'Sprint 3',
     series: [
       {
         name: '2010',
@@ -70,15 +433,11 @@ export const multi = [
       {
         name: '2000',
         value: 34
-      },
-      {
-        name: '1990',
-        value: 29
       }
     ]
   },
   {
-    name: 'United Kingdom',
+    name: 'Sprint 4',
     series: [
       {
         name: '2010',
@@ -87,10 +446,182 @@ export const multi = [
       {
         name: '2000',
         value: 32
+      }
+    ]
+  }
+];
+
+export const tmpAtendimento = [
+  {
+    "name": "Feature",
+    "series": [
+      {
+        "value": 25,
+        "name": "1"
       },
       {
-        name: '1990',
-        value: 26
+        "value": 24,
+        "name": "2"
+      },
+      {
+        "value": 45,
+        "name": "3"
+      },
+      {
+        "value": 33,
+        "name": "4"
+      },
+      {
+        "value": 60,
+        "name": "5"
+      }
+    ]
+  },
+  {
+    "name": "US",
+    "series": [
+      {
+        "value": 6,
+        "name": "1"
+      },
+      {
+        "value": 5,
+        "name": "2"
+      },
+      {
+        "value": 4,
+        "name": "3"
+      },
+      {
+        "value": 6,
+        "name": "4"
+      },
+      {
+        "value": 7,
+        "name": "5"
+      }
+    ]
+  }
+];
+
+export const radar = [
+  {
+    "name": "Germany",
+    "series": [
+      {
+        "name": "2010",
+        "value": 7300000
+      },
+      {
+        "name": "2011",
+        "value": 8940000
+      }
+    ]
+  },{
+    "name": "USA",
+    "series": [
+      {
+        "name": "2010",
+        "value": 7870000
+      },
+      {
+        "name": "2011",
+        "value": 8270000
+      }
+    ]
+  }
+];
+
+export const dispersaoSprints = [
+  {
+    name: 'Investimentos',
+    series: [
+      {
+        name: "Sprint 1",
+        x: 850,
+        y: 18.3,
+        r: 80.4
+      },
+      {
+        name: "Sprint 2",
+        x: 930,
+        y: 17.3,
+        r: 78
+      },
+      {
+        name: "Sprint 3",
+        x: 905,
+        y: 15.4,
+        r: 79
+      }
+    ]
+  },
+  {
+    name: 'Cadastros',
+    series: [
+      {
+        name: "Sprint 1",
+        x: 760,
+        y: 19.8,
+        r: 310
+      },
+      {
+        name: "Sprint 2",
+        x: 1045,
+        y: 19.9,
+        r: 283
+      },
+      {
+        name: "Sprint 3",
+        x: 952,
+        y: 15.4,
+        r: 253
+      }
+    ]
+  },
+  {
+    name: 'Contas',
+    series: [
+      {
+        name: "Sprint 1",
+        x: 903,
+        y: 19.4,
+        r: 63
+      },
+      {
+        name: "Sprint 2",
+        x: 1230,
+        y: 21.1,
+        r: 59.4
+      },
+      {
+        name: "Sprint 3",
+        x: 1130,
+        y: 22,
+        r: 56.9
+      }
+    ]
+  },
+  {
+    name: 'Empréstimmos',
+    series: [
+      {
+        name: "Sprint 1",
+        x: 1280,
+        y: 20.2,
+        r: 62.7
+      },
+      {
+        name: "Sprint 2",
+        x: 1330,
+        y: 27.8,
+        r: 58.9
+      },
+      {
+        name: "Sprint 3",
+        x: 1450,
+        y: 25.7,
+        r: 57.1
       }
     ]
   }
@@ -98,7 +629,7 @@ export const multi = [
 
 export const bubble = [
   {
-    name: 'Germany',
+    name: 'Sprint 1',
     series: [
       {
         name: new Date(Math.floor(1473700105009 +  Math.random() * 1000000000)),
@@ -121,7 +652,7 @@ export const bubble = [
     ]
   },
   {
-    name: 'USA',
+    name: 'Sprint 2',
     series: [
       {
         name: new Date(Math.floor(1473700105009 +  Math.random() * 1000000000)),
@@ -144,7 +675,7 @@ export const bubble = [
     ]
   },
   {
-    name: 'France',
+    name: 'Sprint 3',
     series: [
       {
         name: new Date(Math.floor(1473700105009 +  Math.random() * 1000000000)),
@@ -167,7 +698,7 @@ export const bubble = [
     ]
   },
   {
-    name: 'United Kingdom',
+    name: 'Sprint 4',
     series: [
       {
         name: new Date(Math.floor(1473700105009 +  Math.random() * 1000000000)),
@@ -188,6 +719,52 @@ export const bubble = [
         r: 57.1
       }
     ]
+  }
+];
+
+export const sistemas = [
+  {
+    name: 'Conta Corrente',
+    value: 251.5
+  },
+  {
+    name: 'Análise de Crédito',
+    value: 54.0
+  },
+  {
+    name: 'Cadastro de Pessoas',
+    value: 50.2
+  },
+  {
+    name: 'Empréstimos',
+    value: 23.0
+  }
+];
+
+export const capacidade = [
+  {
+    name: 'PF/PM',
+    value: 25.5
+  },
+  {
+    name: 'PF/Dia',
+    value: 14.0
+  },
+  {
+    name: 'PF/Mês',
+    value: "1.2K"
+  },
+  {
+    name: 'Esf./Mês',
+    value: "3.4K"
+  },
+  {
+    name: 'R$/Mês',
+    value: "50.2K"
+  },
+  {
+    name: 'Leadtime',
+    value: "25 d"
   }
 ];
 

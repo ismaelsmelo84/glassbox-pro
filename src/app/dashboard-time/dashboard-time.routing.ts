@@ -6,6 +6,6 @@ export const DashboardTimeRoutes: Routes = [{
   path: '',
   component: DashboardTimeComponent,
   data: {
-    heading: 'Painel do Time'
+    heading: 'Painel do TIME'
   }
 }];

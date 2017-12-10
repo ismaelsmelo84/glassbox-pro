@@ -112,17 +112,4 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
   openSearch(search) {
     this.modalService.open(search, { windowClass: 'search', backdrop: false });
   }
-
-  addMenuItem(): void {
-    this.menuItems.add({
-      state: 'menu',
-      name: 'MENU',
-      type: 'sub',
-      icon: 'basic-webpage-txt',
-      children: [
-        {state: 'menu', name: 'MENU'},
-        {state: 'menu', name: 'MENU'}
-      ]
-    });
-  }
 }

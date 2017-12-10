@@ -8,7 +8,9 @@ import { DashboardTimeComponent } from './dashboard-time.component';
 import { DashboardTimeRoutes } from './dashboard-time.routing';
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(DashboardTimeRoutes), NgxChartsModule],
+  imports: [CommonModule,
+            RouterModule.forChild(DashboardTimeRoutes),
+            NgxChartsModule],
   declarations: [DashboardTimeComponent]
 })
 

@@ -6,6 +6,6 @@ export const DashboardRoutes: Routes = [{
   path: '',
   component: DashboardComponent,
   data: {
-    heading: 'Dashboard'
+    heading: 'Principal'
   }
 }];

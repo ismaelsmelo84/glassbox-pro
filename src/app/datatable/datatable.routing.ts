@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 
 import { DataTableComponent } from './data-table/data-table.component';
 import { TableEditingComponent } from './table-editing/table-editing.component';
-import { TableFilterComponent } from './table-filter/table-filter.component';
 import { TablePagingComponent } from './table-paging/table-paging.component';
 import { TablePinningComponent } from './table-pinning/table-pinning.component';
 import { TableSelectionComponent } from './table-selection/table-selection.component';
@@ -22,12 +21,6 @@ export const DatatableRoutes: Routes = [
       component: TableEditingComponent,
       data: {
         heading: 'Editing'
-      }
-    }, {
-      path: 'filter',
-      component: TableFilterComponent,
-      data: {
-        heading: 'Filter'
       }
     }, {
       path: 'paging',

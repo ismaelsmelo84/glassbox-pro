@@ -10,29 +10,26 @@ export const AppRoutes: Routes = [{
     path: '',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   }, {
+    path: 'dashboard-empresa',
+    loadChildren: './dashboard-empresa/dashboard-empresa.module#DashboardEmpresaModule'
+  }, {
     path: 'dashboard-portfolio',
     loadChildren: './dashboard-portfolio/dashboard-portfolio.module#DashboardPortfolioModule'
   }, {
     path: 'dashboard-time',
     loadChildren: './dashboard-time/dashboard-time.module#DashboardTimeModule'
   }, {
-    path: 'email',
-    loadChildren: './email/email.module#EmailModule'
+    path: 'news',
+    loadChildren: './news/news.module#NewsModule'
   }, {
     path: 'components',
     loadChildren: './components/components.module#ComponentsModule'
   }, {
-    path: 'icons',
-    loadChildren: './icons/icons.module#IconsModule'
+    path: 'cadastros',
+    loadChildren: './cadastros/cadastros.module#CadastrosModule'
   }, {
-    path: 'cards',
-    loadChildren: './cards/cards.module#CardsModule'
-  }, {
-    path: 'forms',
-    loadChildren: './form/form.module#FormModule'
-  }, {
-    path: 'tables',
-    loadChildren: './tables/tables.module#TablesModule'
+    path: 'dados',
+    loadChildren: './dados/dados.module#DadosModule'
   }, {
     path: 'datatable',
     loadChildren: './datatable/datatable.module#DatatableModule'
@@ -40,26 +37,17 @@ export const AppRoutes: Routes = [{
     path: 'charts',
     loadChildren: './charts/charts.module#ChartsModule'
   }, {
-    path: 'maps',
-    loadChildren: './maps/maps.module#MapsModule'
-  }, {
     path: 'pages',
     loadChildren: './pages/pages.module#PagesModule'
   }, {
-    path: 'taskboard',
-    loadChildren: './taskboard/taskboard.module#TaskboardModule'
+    path: 'info',
+    loadChildren: './info/info.module#InfoModule'
   }, {
-    path: 'calendar',
-    loadChildren: './fullcalendar/fullcalendar.module#FullcalendarModule'
+    path: 'configs',
+    loadChildren: './configs/configs.module#ConfigsModule'
   }, {
-    path: 'media',
-    loadChildren: './media/media.module#MediaModule'
-  }, {
-    path: 'widgets',
-    loadChildren: './widgets/widgets.module#WidgetsModule'
-  }, {
-    path: 'social',
-    loadChildren: './social/social.module#SocialModule'
+    path: 'kpis',
+    loadChildren: './kpis/kpis.module#KpisModule'
   }, {
     path: 'docs',
     loadChildren: './docs/docs.module#DocsModule'
@@ -73,9 +61,6 @@ export const AppRoutes: Routes = [{
   }, {
     path: 'error',
     loadChildren: './error/error.module#ErrorModule'
-  }, {
-    path: 'landing',
-    loadChildren: './landing/landing.module#LandingModule'
   }]
 }, {
   path: '**',

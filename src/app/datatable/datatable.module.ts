@@ -7,7 +7,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { DatatableRoutes } from './datatable.routing';
 import { DataTableComponent } from './data-table/data-table.component';
 import { TableEditingComponent } from './table-editing/table-editing.component';
-import { TableFilterComponent } from './table-filter/table-filter.component';
 import { TablePagingComponent } from './table-paging/table-paging.component';
 import { TablePinningComponent } from './table-pinning/table-pinning.component';
 import { TableSelectionComponent } from './table-selection/table-selection.component';
@@ -22,7 +21,6 @@ import { TableSortingComponent } from './table-sorting/table-sorting.component';
   declarations: [
     DataTableComponent,
     TableEditingComponent,
-    TableFilterComponent,
     TablePagingComponent,
     TablePinningComponent,
     TableSelectionComponent,

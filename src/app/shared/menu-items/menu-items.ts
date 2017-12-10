@@ -28,414 +28,134 @@ const MENUITEMS = [
     icon: 'basic-accelerator'
   },
   {
+    state: 'dashboard-empresa',
+    name: 'EMPRESAS',
+    type: 'link',
+    icon: 'weather-wind-s'
+  },
+  {
     state: 'dashboard-portfolio',
     name: 'PORTFOLIO',
     type: 'link',
-    icon: 'basic-accelerator'
+    icon: 'basic-folder-multiple'
   },
   {
     state: 'dashboard-time',
-    name: 'TIME',
+    name: 'EQUIPES',
     type: 'link',
-    icon: 'basic-accelerator'
+    icon: 'ecommerce-money'
   },
   {
-    state: 'email',
-    name: 'EMAIL',
-    type: 'link',
-    icon: 'basic-paperplane'
-  },
-  {
-    state: 'components',
-    name: 'COMPONENTS',
+    state: 'dados',
+    name: 'DADOS',
     type: 'sub',
-    icon: 'basic-webpage-multiple',
+    icon: 'arrows-sign-right',
     badge: [
       {
-        type: 'success',
-        value: '5'
+        type: 'buttons',
+        value: 'INFORMAR'
       }
     ],
     children: [
       {
-        state: 'accordion',
-        name: 'ACCORDION'
+        state: 'taskboard',
+        name: 'TASKBOARD'
+      },      {
+        state: 'estimativa',
+        name: 'ESTIMATIVA'
       },
       {
-        state: 'alert',
-        name: 'ALERT'
+        state: 'medicao',
+        name: 'MEDICAO'
       },
       {
-        state: 'buttons',
-        name: 'BUTTONS'
-      },
-      {
-        state: 'buttonicons',
-        name: 'SBUTTONS'
-      },
-      {
-        state: 'carousel',
-        name: 'CAROUSEL'
-      },
-      {
-        state: 'collapse',
-        name: 'COLLAPSE'
-      },
-      {
-        state: 'datepicker',
-        name: 'DATEPICKER'
-      },
-      {
-        state: 'dropdown',
-        name: 'DROPDOWN'
-      },
-      {
-        state: 'modal',
-        name: 'MODAL'
-      },
-      {
-        state: 'pagination',
-        name: 'PAGINATION'
-      },
-      {
-        state: 'popover',
-        name: 'POPOVER'
-      },
-      {
-        state: 'progress',
-        name: 'PROGRESS'
-      },
-      {
-        state: 'rating',
-        name: 'RATING'
-      },
-      {
-        state: 'tabs',
-        name: 'TABS'
-      },
-      {
-        state: 'timepicker',
-        name: 'TIMEPICKER'
-      },
-      {
-        state: 'tooltip',
-        name: 'TOOLTIP'
-      },
-      {
-        state: 'typeahead',
-        name: 'TYPEAHEAD'
-      },
-      {
-        state: 'spinners',
-        name: 'SPINNERS'
+        state: 'outros',
+        name: 'OUTROS'
       }
     ]
   },
   {
-    state: 'icons',
-    name: 'ICONS',
-    type: 'sub',
-    icon: 'basic-postcard',
-    children: [
-      {
-        state: 'linea',
-        name: 'LINEA'
-      },
-      {
-        state: 'fontawesome',
-        name: 'FONTAWESOME'
-      },
-      {
-        state: 'sli',
-        name: 'SLI'
-      }
-    ]
-  },
-  {
-    state: 'taskboard',
-    name: 'TASKBOARD',
+    state: 'kpis',
+    name: 'KPIS',
     type: 'link',
-    icon: 'basic-message-txt'
+    icon: 'ecommerce-graph3'
   },
   {
-    state: 'cards',
-    name: 'CARDS',
-    type: 'sub',
-    icon: 'basic-postcard',
-    children: [
-      {
-        state: 'basic',
-        name: 'BASIC'
-      },
-      {
-        state: 'portlets',
-        name: 'PORTLETS'
-      },
-      {
-        state: 'draggable',
-        name: 'DRAGGABLE'
-      }
-    ]
-  },
-  {
-    state: 'forms',
-    name: 'FORMS',
-    type: 'sub',
-    icon: 'basic-sheet-pen',
-    children: [
-      {
-        state: 'basic',
-        name: 'BASIC'
-      },
-      {
-        state: 'masks',
-        name: 'MASKS'
-      },
-      {
-        state: 'editor',
-        name: 'EDITOR'
-      },
-      {
-        state: 'validation',
-        name: 'VALIDATION'
-      },
-      {
-        state: 'upload',
-        name: 'UPLOAD'
-      },
-      {
-        state: 'tree',
-        name: 'TREE'
-      },
-    ]
-  },
-  {
-    state: 'tables',
-    name: 'TABLES',
-    type: 'sub',
-    icon: 'basic-webpage-txt',
-    badge: [
-      {
-        type: 'primary',
-        value: '2'
-      }
-    ],
-    children: [
-      {
-        state: 'basic',
-        name: 'BASIC'
-      },
-      {
-        state: 'responsive',
-        name: 'RESPONSIVE'
-      },
-    ]
-  },
-  {
-    state: 'datatable',
-    name: 'DATATABLES',
-    type: 'sub',
-    icon: 'basic-webpage-img-txt',
-    children: [
-      {
-        state: 'fullscreen',
-        name: 'FULLSCREEN'
-      },
-      {
-        state: 'editing',
-        name: 'EDITING'
-      },
-      {
-        state: 'filter',
-        name: 'FILTER'
-      },
-      {
-        state: 'paging',
-        name: 'PAGING'
-      },
-      {
-        state: 'pinning',
-        name: 'PINNING'
-      },
-      {
-        state: 'selection',
-        name: 'SELECTION'
-      },
-      {
-        state: 'sorting',
-        name: 'SORTING'
-      },
-    ]
-  },
-  {
-    state: 'charts',
-    name: 'CHARTS',
-    type: 'sub',
-    icon: 'ecommerce-graph1',
+    state: 'news',
+    name: 'NEWS',
+    type: 'link',
+    icon: 'basic-paperplane',
     badge: [
       {
         type: 'info',
-        value: '4'
+        value: '2'
       }
     ],
-    children: [
-      {
-        state: 'bar',
-        name: 'BAR'
-      },
-      {
-        state: 'pie',
-        name: 'PIE'
-      },
-      {
-        state: 'line',
-        name: 'LINE'
-      },
-      {
-        state: 'misc',
-        name: 'MISC'
-      }
-    ]
   },
   {
-    state: 'maps',
-    name: 'MAPS',
-    type: 'sub',
-    icon: 'basic-geolocalize-01',
-    children: [
-      {
-        state: 'google',
-        name: 'GOOGLE'
-      },
-      {
-        state: 'fullscreen',
-        name: 'FULLSCREEN'
-      }
-    ]
-  },
-  {
-    state: 'pages',
-    name: 'PAGES',
-    type: 'sub',
-    icon: 'basic-spread-text-bookmark',
-    children: [
-      {
-        state: 'invoice',
-        name: 'INVOICE'
-      },
-      {
-        state: 'forum',
-        name: 'FORUM'
-      },
-      {
-        state: 'timeline',
-        name: 'TIMELINE'
-      },
-      {
-        state: 'activity',
-        name: 'ACTIVITY'
-      },
-      {
-        state: 'pricing',
-        name: 'PRICING'
-      },
-      {
-        state: 'blank',
-        name: 'BLANK'
-      }
-    ]
-  },
-  {
-    state: 'landing',
-    name: 'LANDING',
-    type: 'link',
-    icon: 'basic-spread'
-  },
-  {
-    state: 'authentication',
-    name: 'AUTHENTICATION',
-    type: 'sub',
-    icon: 'basic-lock-open',
-    children: [
-      {
-        state: 'signin',
-        name: 'SIGNIN'
-      },
-      {
-        state: 'signup',
-        name: 'SIGNUP'
-      },
-      {
-        state: 'forgot',
-        name: 'FORGOT'
-      },
-      {
-        state: 'lockscreen',
-        name: 'LOCKSCREEN'
-      },
-    ]
-  },
-  {
-    state: 'error',
-    name: 'ERROR',
-    type: 'sub',
-    icon: 'basic-ban',
-    children: [
-      {
-        state: '404',
-        name: '404'
-      },
-      {
-        state: '500',
-        name: '500'
-      },
-      {
-        state: '503',
-        name: '503'
-      }
-    ]
-  },
-  {
-    state: 'calendar',
-    name: 'CALENDAR',
-    type: 'link',
-    icon: 'basic-calendar'
-  },
-  {
-    state: 'media',
-    name: 'MEDIA',
+    state: 'info',
+    name: 'INFOS',
     type: 'sub',
     icon: 'basic-todo-txt',
     children: [
       {
-        state: 'grid',
-        name: 'GRID'
-      },
-      {
-        state: 'tile',
-        name: 'TILE'
-      },
-      {
-        state: 'list',
-        name: 'LIST'
+        state: 'mural',
+        name: 'MURAL'
+      },{
+        state: 'docs',
+        name: 'DOCUMENTOS'
+      },{
+        state: 'boletins',
+        name: 'BOLETINS'
+      },{
+        state: 'links',
+        name: 'LINKS'
       }
     ]
   },
   {
-    state: 'widgets',
-    name: 'WIDGETS',
-    type: 'link',
-    icon: 'software-scale-reduce'
+    state: 'cadastros',
+    name: 'CADASTROS',
+    type: 'sub',
+    icon: 'basic-book-pencil',
+    children: [
+      {
+        state: 'portfolios',
+        name: 'PORTFOLIOS'
+      },
+      {
+        state: 'targets',
+        name: 'TARGETS'
+      },
+      {
+        state: 'times',
+        name: 'EQUIPES'
+      },
+      {
+        state: 'sistemas',
+        name: 'SISTEMAS'
+      }
+    ]
   },
   {
-    state: 'social',
-    name: 'SOCIAL',
-    type: 'link',
-    icon: 'basic-elaboration-message-happy'
+    state: 'configs',
+    name: 'CONFIGURACOES',
+    type: 'sub',
+    icon: 'basic-settings',
+    children: [
+      {
+        state: 'params',
+        name: 'PARAMETROS'
+      },
+      {
+        state: 'users',
+        name: 'USUARIOS'
+      }
+    ]
   },
   {
     state: 'docs',
-    name: 'DOCS',
+    name: 'DOCUMENTACAO',
     type: 'link',
     icon: 'basic-sheet-txt'
   }

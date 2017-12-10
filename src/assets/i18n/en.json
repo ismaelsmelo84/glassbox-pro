@@ -1,7 +1,5 @@
 {
-  "HOME": "Home",
-
-  "EMAIL": "Email",
+  "HOME": "Main",
 
   "COMPONENTS": "Components",
     "ACCORDION": "Accordion",
@@ -27,8 +25,6 @@
     "LINEA": "Linea",
     "FONTAWESOME": "FontAwesome",
     "SLI": "Simple Line Icons",
-
-  "TASKBOARD": "Taskboard",
 
   "CARDS": "Cards",
     "BASIC": "Basic",
@@ -87,17 +83,46 @@
   "CALENDAR": "Calendar",
 
   "MEDIA": "Media",
+    "MURAL": "Mural",
     "GRID": "Grid",
     "TILE": "Tile",
     "LIST": "List",
 
   "WIDGETS": "Widgets",
 
-  "SOCIAL": "Social",
-
-  "DOCS": "Docs",
+  "SOCIAL": "Projeto",
 
   "MENU": "Menu",
-  "PORTFOLIO": "Portfolio",
-  "TIME": "Time"
+
+  "PORTFOLIO": "Portfólios",
+
+  "EQUIPES": "Equipes",
+
+  "DADOS": "Dados",
+    "TASKBOARD": "Taskboard",
+    "ESTIMATIVA": "Estimativa",
+    "MEDICAO": "Medição",
+    "OUTROS": "Outros",
+
+  "KPIS": "KPIs",
+
+  "NEWS": "News",
+
+  "INFOS": "Infos",
+    "DOCUMENTOS": "Documents",
+    "BOLETINS": "Boletins",
+    "LINKS": "Links",
+
+  "CADASTROS": "Cadastros",
+    "PORTFOLIOS": "Portfólios",
+    "TARGETS": "Targets",
+    "EQUIPES": "Times",
+    "SISTEMAS": "Sistemas",
+
+  "CONFIGURACOES": "Configurações",
+    "PARAMETROS": "Parâmetros",
+    "EMPRESAS": "Empresas",
+    "USUARIOS": "Usuários",
+
+  "DOCUMENTACAO": "Documentação"
 }

@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">Usuários</div>
+  <div class="card-body">
+    <p>Exibindo a relação de usuários sob sua administração.</p>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table align-middle mb-0">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>Nome</th>
+          <th>Registrado em</th>
+          <th>Empresa/Unidade</th>
+          <th>E-mail</th>
+          <th>Fone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>
+            <img src="{{user.picture.large}}" class="avatar-md rounded" alt="">
+          </td>
+          <td>
+            <a href="#" class="d-block text-capitalize">{{user.name.title}} {{user.name.first}} {{user.name.last}}</a>
+            <small>{{user.login.username}}</small>
+          </td>
+          <td>{{ user.registered | date:'yMMMd' }}</td>
+          <td>
+              <span class="badge badge-default text-uppercase">{{user.location.city}}</span>
+          </td>
+          <td>
+              <a href="#">{{user.email}}</a>
+          </td>
+          <td>{{user.cell}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

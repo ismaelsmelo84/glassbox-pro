@@ -6,6 +6,6 @@ export const DashboardPortfolioRoutes: Routes = [{
   path: '',
   component: DashboardPortfolioComponent,
   data: {
-    heading: 'Painel do Portfólio'
+    heading: 'Painel do PORTFÓLIO'
   }
 }];

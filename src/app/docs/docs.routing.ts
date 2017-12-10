@@ -6,6 +6,6 @@ export const DocsRoutes: Routes = [{
   path: '',
   component: DocsComponent,
   data: {
-    heading: 'Documentation'
+    heading: 'Documentação'
   }
 }];

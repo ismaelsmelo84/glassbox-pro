@@ -1,7 +1,5 @@
 {
-  "HOME": "Dashboard",
-
-  "EMAIL": "Notificações",
+  "HOME": "Principal",
 
   "COMPONENTS": "Componentes",
     "ACCORDION": "Acordeão",
@@ -28,12 +26,11 @@
     "FONTAWESOME": "Fontes",
     "SLI": "Simples e Linhas",
 
-  "TASKBOARD": "Taskboard",
 
-  "CARDS": "Cartes",
+
+  "CARDS": "Infos",
     "BASIC": "Básico",
     "PORTLETS": "Portal",
-    "DRAGGABLE": "Arrastável",
 
   "FORMS": "Formulários",
     "MASKS": "Máscaras",
@@ -42,10 +39,10 @@
     "UPLOAD": "Upload",
     "TREE": "Árvore",
 
-  "TABLES": "Tabelas",
+  "TABLES": "Dados",
     "RESPONSIVE": "Responsivo",
 
-  "DATATABLES": "Base de dados",
+  "DATATABLES": "Relatórios",
     "FULLSCREEN": "Tela cheia",
     "EDITING": "Edição",
     "FILTER": "Filtros",
@@ -93,11 +90,41 @@
 
   "WIDGETS": "Widgets",
 
-  "SOCIAL": "Social",
+  "SOCIAL": "Projeto",
 
-  "DOCS": "Documentação",
 
   "MENU": "Menu",
-  "PORTFOLIO": "Portfólio",
-  "TIME": "Time"
+
+  "PORTFOLIO": "Portfólios",
+
+  "EQUIPES": "Equipes",
+
+  "DADOS": "Dados",
+    "TASKBOARD": "Tasks",
+    "ESTIMATIVA": "Estimativa",
+    "MEDICAO": "Medição",
+    "OUTROS": "Outros",
+
+  "KPIS": "KPIs",
+
+  "NEWS": "News",
+
+  "INFOS": "Infos",
+    "MURAL": "Notas (mural)",
+    "DOCUMENTOS": "Documentos",
+    "BOLETINS": "Boletins",
+    "LINKS": "Links",
+
+  "CADASTROS": "Cadastros",
+    "PORTFOLIOS": "Portfólios",
+    "TARGETS": "Targets",
+    "EQUIPES": "Times",
+    "SISTEMAS": "Sistemas",
+
+  "CONFIGURACOES": "Configurações",
+    "PARAMETROS": "Parâmetros",
+    "EMPRESAS": "Empresas",
+    "USUARIOS": "Usuários",
+
+  "DOCUMENTACAO": "Documentação"
 }

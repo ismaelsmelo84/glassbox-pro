@@ -1,0 +1,271 @@
+<a class="btn btn-outline-primary btn-link" href="dashboard-empresa" [routerLink]="['../diagnostico']">Diagnóstico</a> | <a class="btn btn-outline-primary btn-link" href="dashboard-empresa" [routerLink]="['../progresso']">Progresso</a> | <a class="btn btn-outline-primary btn-link" href="dashboard-empresa" [routerLink]="['../desempenho']">Desempenho</a><p>
+
+<div class="row">
+  <div class="col-sm-6 col-md-3">
+    <div class="card card-body card-widget">
+      <div class="widget-icon rounded-circle bg-green text-white icon icon-basic-flag1">
+      </div>
+      <div class="block ml-3 mr-3">
+        <h5 class="mb-0 fw-400">
+          16
+        </h5>
+        <small class="text-muted text-uppercase ">
+          <strong>Times desenvolvendo</strong>
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="card card-body card-widget">
+      <div class="widget-icon rounded-circle bg-blue text-white icon icon-basic-target">
+      </div>
+      <div class="block ml-3 mr-3">
+        <h5 class="mb-0 fw-400">
+          25
+        </h5>
+        <small class="text-muted text-uppercase ">
+          <strong>Targets no Portfólio</strong>
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="card card-body card-widget">
+      <div class="widget-icon rounded-circle bg-teal text-white icon icon-ecommerce-graph-increase">
+      </div>
+      <div class="block ml-3 mr-3">
+        <h5 class="mb-0 fw-400">
+          1,2K
+        </h5>
+        <small class="text-muted text-uppercase ">
+          <strong>Pontos de Função</strong>
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="card card-body card-widget">
+      <div class="widget-icon rounded-circle bg-red text-white icon icon-basic-clock">
+      </div>
+      <div class="block ml-3 mr-3">
+        <h5 class="mb-0 fw-400">
+          7,5K
+        </h5>
+        <small class="text-muted text-uppercase ">
+          <strong>Horas executadas</strong>
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header">DISPERSÃO</div>
+      <div class="card-body">
+        <div>
+          <small class="text-muted">[ sprints executadas ]</small>
+          <ngx-charts-bubble-chart
+            class="chart-container"
+            [view]="dis_view"
+            [results]="dispersaoSprints"
+            [showGridLines]="dis_showGridLines"
+            [legend]="false"
+            [xAxis]="dis_showXAxis"
+            [yAxis]="dis_showYAxis"
+            [showXAxisLabel]="dis_showXAxisLabel"
+            [showYAxisLabel]="true"
+            [xAxisLabel]="dis_xAxisLabel"
+            [yAxisLabel]="dis_yAxisLabel"
+            [autoScale]="dis_autoScale"
+            [scheme]="dis_colorScheme"
+            [schemeType]="dis_schemeType"
+            [roundDomains]="dis_roundDomains"
+            [tooltipDisabled]="dis_tooltipDisabled"
+            [minRadius]="dis_minRadius"
+            [maxRadius]="dis_maxRadius">
+          </ngx-charts-bubble-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header">Capacidade</div>
+      <div class="card-body">
+        <div>
+          <small class="text-muted">[ resultados do período ]</small>
+          <ngx-charts-number-card
+            class="chart-container"
+            (legendLabelClick)="onLegendLabelClick($event)"
+            [scheme]="cap_colorScheme"
+            [results]="capacidade"
+            (select)="select($event)">
+          </ngx-charts-number-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-header-text w-100">
+          Mapa de Aplicações
+          <!--
+          <div class="card-title">
+            Complexidade & Contribuição
+          </div>
+          <div class="card-subtitle text-capitalize ff-sans">
+            Complexidade & Contribuição
+          </div>
+          -->
+        </div>
+        <small class="text-muted">total de unidades desenvolvidas e complexidade, por aplicação</small>
+      </div>
+      <div class="mb-1">
+        <!-- Início do gráfico de "Sistemas" -->
+        <ngx-charts-tree-map
+          class="chart-container"
+          (legendLabelClick)="onLegendLabelClick($event)"
+          [scheme]="sis_colorScheme"
+          [results]="sistemas"
+          [tooltipDisabled]="sis_tooltipDisabled"
+          (select)="select($event)">
+        </ngx-charts-tree-map>
+        <!-- Fim do gráfico de "Sistemas" -->
+      </div>
+      <div class="card-body">
+        <div class="row text-center">
+          <div class="col-sm-6 col-md-3 text-purple">
+            <h5 class="mb-0">
+              <strong>
+                EAF
+              </strong>
+            </h5>
+            <small>
+
+            </small>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <h5 class="mb-0">
+              <strong>
+                0,85
+              </strong>
+            </h5>
+            <small>
+              <
+            </small>
+          </div>
+          <div class="col-sm-6 col-md-3 text-indigo">
+            <h5 class="mb-0">
+              <strong>
+                1,04
+              </strong>
+            </h5>
+            <small>
+              EAF Médio
+            </small>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <h5 class="mb-0">
+              <strong>
+                1,75
+              </strong>
+            </h5>
+            <small>
+              >
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-header-text w-100">
+            Saúde do Sistema
+          <!--
+          <div class="card-title">
+            Saúde do Sistema
+          </div>
+          <div class="card-subtitle text-capitalize ff-sans">
+            Situação Operacional
+          </div>
+          -->
+        </div>
+        <small class="text-muted">análise de continuidade</small>
+      </div>
+      <div class="card-body">
+        <div class="row text-center">
+          <div class="col-xs-6 col-sm-3 text-success">
+            <h5 class="mb-0">
+              <strong>
+                20 PF
+              </strong>
+            </h5>
+            <small>
+              WIP
+            </small>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <h5 class="mb-0">
+              <strong>
+                5 dias
+              </strong>
+            </h5>
+            <small>
+              Leadtime
+            </small>
+          </div>
+          <div class="col-xs-6 col-sm-3 text-danger">
+            <h5 class="mb-0">
+              <strong>
+                4 PF
+              </strong>
+            </h5>
+            <small>
+              Entrada
+            </small>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <h5 class="mb-0">
+              <strong>
+                2 PF
+              </strong>
+            </h5>
+            <small>
+              Saída
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <ngx-charts-area-chart-stacked (legendlabelclick)="onLegendLabelClick($event)"
+                                       (select)="select($event)"
+                                       [curve]="curve"
+                                       [gradient]="gradient"
+                                       [legend]="showLegend"
+                                       [results]="dateData"
+                                       [roundDomains]="roundDomains"
+                                       [scheme]="colorScheme"
+                                       [schemeType]="schemeType"
+                                       [showGridLines]="showGridLines"
+                                       [showXAxisLabel]="showXAxisLabel"
+                                       [showYAxisLabel]="showYAxisLabel"
+                                       [timeline]="timeline"
+                                       [tooltipDisabled]="tooltipDisabled"
+                                       [xAxis]="showXAxis"
+                                       [xAxisLabel]="xAxisLabel"
+                                       [yAxis]="showYAxis"
+                                       [yAxisLabel]="yAxisLabel"
+                                       class="line-container">
+        </ngx-charts-area-chart-stacked>
+      </div>
+    </div>
+  </div>
+</div>

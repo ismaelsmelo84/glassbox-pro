@@ -8,7 +8,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalComponent {
 
-  closeResult: string;
+  closeResult: string = "Empresa A, Subportfólio B, Time 1";
 
   constructor(private modalService: NgbModal) {}
 

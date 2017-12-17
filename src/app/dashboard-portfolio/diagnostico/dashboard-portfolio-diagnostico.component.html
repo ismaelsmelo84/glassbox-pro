@@ -1,4 +1,4 @@
-<b>Diagnóstico</b> | Progresso | Desempenho<p>
+<a class="btn btn-outline-primary btn-link" href="dashboard-portfolio" [routerLink]="['../diagnostico']">Diagnóstico</a> | <a class="btn btn-outline-primary btn-link" href="dashboard-portfolio" [routerLink]="['../progresso']">Progresso</a> | <a class="btn btn-outline-primary btn-link" href="dashboard-portfolio" [routerLink]="['../desempenho']">Desempenho</a><p>
 
 <div class="row">
   <div class="col-sm-6 col-md-3">
@@ -10,7 +10,7 @@
           16
         </h5>
         <small class="text-muted text-uppercase ">
-          <strong>Times</strong>
+          <strong>Times desenvolvendo</strong>
         </small>
       </div>
     </div>
@@ -24,7 +24,7 @@
           25
         </h5>
         <small class="text-muted text-uppercase ">
-          <strong>Targets</strong>
+          <strong>Targets no Portfólio</strong>
         </small>
       </div>
     </div>
@@ -38,7 +38,7 @@
           1,2K
         </h5>
         <small class="text-muted text-uppercase ">
-          <strong>Pontos</strong>
+          <strong>Pontos de Função</strong>
         </small>
       </div>
     </div>
@@ -52,7 +52,7 @@
           7,5K
         </h5>
         <small class="text-muted text-uppercase ">
-          <strong>Horas</strong>
+          <strong>Horas executadas</strong>
         </small>
       </div>
     </div>
@@ -65,6 +65,7 @@
       <div class="card-header">DISPERSÃO</div>
       <div class="card-body">
         <div>
+          <small class="text-muted">[ sprints executadas ]</small>
           <ngx-charts-bubble-chart
             class="chart-container"
             [view]="dis_view"
@@ -94,6 +95,7 @@
       <div class="card-header">Capacidade</div>
       <div class="card-body">
         <div>
+          <small class="text-muted">[ resultados do período ]</small>
           <ngx-charts-number-card
             class="chart-container"
             (legendLabelClick)="onLegendLabelClick($event)"
@@ -122,6 +124,7 @@
           </div>
           -->
         </div>
+        <small class="text-muted">total de unidades desenvolvidas e complexidade, por aplicação</small>
       </div>
       <div class="mb-1">
         <!-- Início do gráfico de "Sistemas" -->
@@ -195,6 +198,7 @@
           </div>
           -->
         </div>
+        <small class="text-muted">análise de continuidade</small>
       </div>
       <div class="card-body">
         <div class="row text-center">

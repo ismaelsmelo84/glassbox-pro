@@ -22,7 +22,7 @@ export interface Menu {
 
 const MENUITEMS = [
   {
-    state: '/',
+    state: 'dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'basic-accelerator'
@@ -102,7 +102,7 @@ const MENUITEMS = [
         state: 'mural',
         name: 'MURAL'
       },{
-        state: 'docs',
+        state: 'documentos',
         name: 'DOCUMENTOS'
       },{
         state: 'boletins',

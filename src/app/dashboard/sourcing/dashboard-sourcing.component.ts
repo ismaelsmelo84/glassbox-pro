@@ -2,21 +2,18 @@ import { Component } from '@angular/core';
 import * as shape from 'd3-shape';
 import { colorSets  } from '@swimlane/ngx-charts/release/utils/color-sets';
 import {
-  single, sistemas, dispersaoSprints, capacidade,
+  single,
   generateData
-} from '../shared/chartData';
+} from '../../shared/chartData';
 
 @Component({
-  selector: 'app-dashboard-portfolio',
-  templateUrl: './dashboard-portfolio.component.html',
-  styleUrls: ['./dashboard-portfolio.component.scss']
+  selector: 'app-dashboard-sourcing',
+  templateUrl: './dashboard-sourcing.component.html',
+  styleUrls: ['./dashboard-sourcing.component.scss']
 })
 
-export class DashboardPortfolioComponent {
+export class DashboardSourcingComponent {
   single: any[];
-  sistemas: any[];
-  capacidade: any[];
-  dispersaoSprints: any;
   graph: {
     links: any[],
     nodes: any[]
@@ -63,45 +60,9 @@ export class DashboardPortfolioComponent {
   gaugeValue = 50; // linear gauge value
   gaugePreviousValue = 70;
 
-  // MAPA DE APLICAÇÕES
-  sis_tooltipDisabled = false;
-  sis_colorScheme = {
-    domain: [
-      '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
-    ]
-  };
-
-  // DISPERSÃO
-  dis_view: any;
-  dis_showXAxis = true;
-  dis_showYAxis = true;
-  dis_showXAxisLabel = true;
-  dis_tooltipDisabled = false;
-  dis_xAxisLabel = 'Esforço';
-  dis_showYAxisLabel = true;
-  dis_yAxisLabel = 'Taxa de Entrega';
-  dis_showGridLines = true;
-  dis_roundDomains = false;
-  dis_maxRadius = 10;
-  dis_minRadius = 3;
-  dis_colorScheme = {
-    domain: [
-      '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
-    ]
-  };
-  dis_schemeType = 'ordinal';
-  dis_autoScale = true;
-
-  // CAPACIDADE
-  cap_colorScheme = {
-    domain: [
-      '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
-    ]
-  };
-
   constructor() {
     Object.assign(this, {
-      single, sistemas, dispersaoSprints, capacidade
+      single
     });
     this.dateData = generateData(5, false);
   }

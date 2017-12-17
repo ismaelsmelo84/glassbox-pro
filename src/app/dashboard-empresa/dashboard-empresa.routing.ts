@@ -1,11 +1,32 @@
 import { Routes } from '@angular/router';
 
-import { DashboardEmpresaComponent } from './dashboard-empresa.component';
+import { DashboardEmpresaDiagnosticoComponent } from './diagnostico/dashboard-empresa-diagnostico.component';
+import { DashboardEmpresaProgressoComponent } from './progresso/dashboard-empresa-progresso.component';
+import { DashboardEmpresaDesempenhoComponent } from './desempenho/dashboard-empresa-desempenho.component';
 
 export const DashboardEmpresaRoutes: Routes = [{
-  path: '',
-  component: DashboardEmpresaComponent,
-  data: {
-    heading: 'Painel da EMPRESA'
+    path: '',
+    children: [{
+      path: '',
+      redirectTo: 'diagnostico'
+    }, {
+      path: 'diagnostico',
+      component: DashboardEmpresaDiagnosticoComponent,
+      data: {
+        heading: 'Painel da EMPRESA: Diagnóstico'
+      }
+    }, {
+      path: 'progresso',
+      component: DashboardEmpresaProgressoComponent,
+      data: {
+        heading: 'Painel da EMPRESA: Progresso'
+      }
+    }, {
+      path: 'desempenho',
+      component: DashboardEmpresaDesempenhoComponent,
+      data: {
+        heading: 'Painel da EMPRESA: Desempenho'
+      }
+    }]
   }
-}];
+];

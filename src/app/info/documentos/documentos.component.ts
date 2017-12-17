@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-docs',
-  templateUrl: './docs.component.html',
-  styleUrls: ['./docs.component.scss']
+  selector: 'app-documentos',
+  templateUrl: './documentos.component.html',
+  styleUrls: ['./documentos.component.scss']
 })
-export class DocsComponent {
+export class DocumentosComponent {
 
   images: any[] = [];
   num = 1;

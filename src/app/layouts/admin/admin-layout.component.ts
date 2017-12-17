@@ -40,6 +40,8 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @ViewChild('sidebar') sidebar;
 
+  closeResult: string;
+
   constructor (
     public menuItems: MenuItems,
     private router: Router,
@@ -52,6 +54,26 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
     translate.use(browserLang.match(/pt-br|en/) ? browserLang : 'pt-br');
     this.mediaMatcher.addListener(mql => zone.run(() => this.mediaMatcher = mql));
   }
+
+  open(content) {
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
+
 
   ngOnInit(): void {
 

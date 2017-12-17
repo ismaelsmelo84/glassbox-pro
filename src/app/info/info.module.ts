@@ -7,7 +7,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { InfoRoutes } from './info.routing';
 import { MuralComponent } from './mural/mural.component';
-import { DocsComponent } from './docs/docs.component';
+import { DocumentosComponent } from './documentos/documentos.component';
 import { BoletinsComponent } from './boletins/boletins.component';
 import { LinksComponent } from './links/links.component';
 
@@ -18,7 +18,7 @@ import { LinksComponent } from './links/links.component';
     DragulaModule,
     NgbTooltipModule
   ],
-  declarations: [MuralComponent, DocsComponent, BoletinsComponent, LinksComponent]
+  declarations: [MuralComponent, DocumentosComponent, BoletinsComponent, LinksComponent]
 })
 
 export class InfoModule {}

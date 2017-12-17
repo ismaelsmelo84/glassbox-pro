@@ -1,22 +1,76 @@
+export const radargraf = [
+  {
+    "name": "Atual",
+    "series": [
+      {
+        "value": 3,
+        "name": "Eficácia"
+      },
+      {
+        "value": 3,
+        "name": "Eficiência"
+      },
+      {
+        "value": 4,
+        "name": "Efetividade"
+      },
+      {
+        "value": 4,
+        "name": "Maturidade"
+      },
+      {
+        "value": 3,
+        "name": "Clima"
+      }
+    ]
+  },
+  {
+    "name": "Anterior",
+    "series": [
+      {
+        "value": 2,
+        "name": "Eficácia"
+      },
+      {
+        "value": 3,
+        "name": "Eficiência"
+      },
+      {
+        "value": 4,
+        "name": "Efetividade"
+      },
+      {
+        "value": 3,
+        "name": "Maturidade"
+      },
+      {
+        "value": 2,
+        "name": "Clima"
+      }
+    ]
+  }
+];
+
+
 export const termometro = [
   {
-    name: '1',
+    name: 'Sprint 1',
     value: 5.5
   },
   {
-    name: '5',
+    name: 'Sprint 5',
     value: 5.7
   },
   {
-    name: '9',
+    name: 'Sprint 9',
     value: 6.0
   },
   {
-    name: '13',
+    name: 'Sprint 13',
     value: 5.8
   },
   {
-    name: '17',
+    name: 'Sprint 17',
     value: 6.2
   }
 ];

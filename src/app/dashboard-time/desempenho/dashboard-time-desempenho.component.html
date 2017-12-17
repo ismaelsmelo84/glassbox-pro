@@ -1,0 +1,597 @@
+<a class="btn btn-outline-primary btn-link" href="dashboard-time" [routerLink]="['../diagnostico']">Diagnóstico</a> | <a class="btn btn-outline-primary btn-link" href="dashboard-time" [routerLink]="['../progresso']">Progresso</a> | <a class="btn btn-outline-primary btn-link" href="dashboard-time" [routerLink]="['../desempenho']">Desempenho</a><p>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////
+LINHA 0 ---------------------------------------------------------------------------------------------->
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="card card-body no-bg">
+      <div class="d-flex">
+        <div class="mr-auto">
+          <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Time de </small><strong>Contas</strong></h3>
+          <h6 class="mt-0 mb-0 fw-400"><i>Produtos Bancários</i></h6>
+          <p>
+          <p class="text-muted mt-0 mb-0">Confederação Sicredi</p>
+          <ngb-rating ([rate])="currentRate"></ngb-rating>
+        </div>
+        <div>
+          <img src="assets/images/avatar.jpg" class="avatar-md rounded-circle" alt="">
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="row mb-2">
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">Membros (pessoas)</span>
+              <strong>8</strong>
+            </div>
+          </div>
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">Timebox (sem.)</span>
+              <strong>2</strong>
+            </div>
+          </div>
+        </div>
+
+        <p>
+
+        <div class="row mb-2">
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">Horas/Sprint</span>
+              <strong>640,00</strong>
+            </div>
+          </div>
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">Velocidade (PFC/SP)</span>
+              <strong>53 </strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">Tx. Entrega (PFC/PM)</span>
+              <strong>12,5 </strong>
+            </div>
+          </div>
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">Produtividade (H/PFC)</span>
+              <strong>15,54 </strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">Custo Unit. (R$/PFC)</span>
+              <strong>1150,50</strong>
+            </div>
+          </div>
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">Complexidade (EAF)</span>
+              <strong>2,01</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">Inconform./PFC</span>
+              <strong>0,5 </strong>
+            </div>
+          </div>
+          <div class="col">
+            <div class="d-flex justify-content-start">
+              <span class="mr-auto">PDC (%)</span>
+              <strong>105%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="card no-bg">
+      <div class="card-body text-center rounded">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="radarChartData"
+                  [labels]="radarChartLabels"
+                  [chartType]="radarChartType"
+                  [options]="lineChartOptions"
+                  [legend]="lineChartLegend"
+                  [colors]="lineChartColors"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+          </canvas>
+          <small class="text-muted"><i>* Plano de Desenvolvimento Coletivo </i><p></small>
+          <p>
+        </div>
+      </div>
+      <div class="card-body pt-3 pb-3 ml-3 mr-3 bg-indigo text-white rounded" style="margin-top: -15px;">
+        <div class="row text-center">
+          <div class="col">
+            <div class="h6 no-margin">
+              9800
+            </div>
+            <div class="small bold text-uppercase">
+              PFC
+            </div>
+          </div>
+          <div class="col">
+            <div class="h6 no-margin">
+              12
+            </div>
+            <div class="small bold text-uppercase">
+              MVPs
+            </div>
+          </div>
+            <div class="col">
+              <div class="h6 no-margin">
+                62
+              </div>
+              <div class="small bold text-uppercase">
+                Sprints
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!-- Eficácia -->
+  <div class="col-sm-12 col-md-12">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-header-text w-100">
+          <div class="card-title">
+            <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Eficácia</strong></h3>
+            <small class="text-muted">Estamos fazendo o trabalho conforme nos comprometemos?</small>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row text-center">
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">Atingimento das Metas</div>
+              <div class="card-body">
+                <div>
+                  <small class="text-muted">[ % aceito do que foi entregue ]</small>
+                  <ngx-charts-advanced-pie-chart
+                    class="chart-container"
+                    [scheme]="atm_colorScheme"
+                    [results]="atingimentoMetas"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [gradient]="atm_gradient"
+                    [tooltipDisabled]="atm_tooltipDisabled"
+                    (select)="select($event)">
+                  </ngx-charts-advanced-pie-chart>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">Qualidade nas Entregas</div>
+              <div class="card-body">
+                <div>
+                  <small class="text-muted">[ quantidade e % inconformidades, por ambiente ]</small>
+                  <ngx-charts-pie-grid
+                    class="chart-container"
+                    [scheme]="qua_colorScheme"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [results]="qualidade"
+                    [tooltipDisabled]="f1tooltipDisabled"
+                    (select)="select($event)">
+                  </ngx-charts-pie-grid>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////
+LINHA 2 ---------------------------------------------------------------------------------------------->
+
+<div class="row">
+  <!-- Eficiência -->
+  <div class="col-sm-12 col-md-12">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-header-text w-100">
+          <div class="card-title">
+            <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Eficiência</strong></h3>
+            <small class="text-muted">Estamos otimizando o uso dos recursos?</small>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row text-center">
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">Custo</div>
+              <div class="card-body">
+                <div>
+                  <small class="text-muted">[ custo médio da unidade construída ]</small>
+                  <ngx-charts-bar-vertical-stacked
+                    class="chart-container"
+                    [scheme]="cus_colorScheme"
+                    [schemeType]="cus_schemeType"
+                    [results]="custoPf"
+                    [gradient]="cus_gradient"
+                    [tooltipDisabled]="cus_tooltipDisabled"
+                    [xAxis]="cus_showXAxis"
+                    [yAxis]="cus_showYAxis"
+                    [legend]="cus_showLegend"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [showXAxisLabel]="cus_showXAxisLabel"
+                    [showYAxisLabel]="cus_showYAxisLabel"
+                    [xAxisLabel]="cus_xAxisLabel"
+                    [yAxisLabel]="cus_yAxisLabel"
+                    [showGridLines]="cus_showGridLines"
+                    [barPadding]="cus_barPadding"
+                    [roundDomains]="cus_roundDomains"
+                    (select)="select($event)">
+                  </ngx-charts-bar-vertical-stacked>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">Produtividade</div>
+              <div class="card-body">
+                <div>
+                  <small class="text-muted">[ horas para o desenvolvimento de uma unidade ]</small>
+                  <ngx-charts-line-chart
+                    class="chart-container"
+                    [scheme]="pro_colorScheme"
+                    [schemeType]="pro_schemeType"
+                    [results]="produtividade"
+                    [legend]="pro_showLegend"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [gradient]="pro_gradient"
+                    [xAxis]="pro_showXAxis"
+                    [yAxis]="pro_showYAxis"
+                    [showXAxisLabel]="pro_showXAxisLabel"
+                    [showYAxisLabel]="pro_showYAxisLabel"
+                    [xAxisLabel]="pro_xAxisLabel"
+                    [yAxisLabel]="pro_yAxisLabel"
+                    [autoScale]="pro_autoScale"
+                    [timeline]="pro_timeline"
+                    [showGridLines]="pro_showGridLines"
+                    [curve]="pro_curve"
+                    [rangeFillOpacity]="pro_rangeFillOpacity"
+                    [roundDomains]="pro_roundDomains"
+                    [tooltipDisabled]="pro_tooltipDisabled"
+                    (select)="select($event)">
+                  </ngx-charts-line-chart>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">Taxa de Entrega</div>
+              <div class="card-body">
+                <div>
+                  <small class="text-muted">[ unidades desenvolvidas no período, por membro do time ]</small>
+                  <ngx-charts-line-chart
+                    class="chart-container"
+                    [scheme]="txe_colorScheme"
+                    [schemeType]="txe_schemeType"
+                    [results]="txEntrega"
+                    [legend]="txe_showLegend"
+                    [timeline] = "txe_timeline"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [gradient]="txe_gradient"
+                    [xAxis]="txe_showXAxis"
+                    [showXAxisLabel]="txe_showXAxisLabel"
+                    [yAxis]="txe_showYAxis"
+                    [showYAxisLabel]="txe_showYAxisLabel"
+                    [xAxisLabel]="txe_xAxisLabel"
+                    [yAxisLabel]="txe_yAxisLabel"
+                    [autoScale]="txe_autoScale"
+                    [timeline]="txe_timeline"
+                    [showGridLines]="txe_showGridLines"
+                    [curve]="txe_curve"
+                    [rangeFillOpacity]="txe_rangeFillOpacity"
+                    [roundDomains]="txe_roundDomains"
+                    [tooltipDisabled]="txe_tooltipDisabled"
+                    (select)="select($event)">
+                  </ngx-charts-line-chart>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">Velocidade</div>
+              <div class="card-body">
+                <div>
+                  <small class="text-muted">[ unidades desenvolvidas por sprint ]</small>
+                  <ngx-charts-bar-vertical-2d
+                    class="chart-container"
+                    [scheme]="vel_colorScheme"
+                    [schemeType]="vel_schemeType"
+                    [results]="velocidade"
+                    [gradient]="vel_gradient"
+                    [xAxis]="vel_showXAxis"
+                    [yAxis]="vel_showYAxis"
+                    [legend]="vel_showLegend"
+                    [showXAxisLabel]="vel_showXAxisLabel"
+                    [showYAxisLabel]="vel_showYAxisLabel"
+                    [tooltipDisabled]="vel_tooltipDisabled"
+                    [xAxisLabel]="vel_xAxisLabel"
+                    [yAxisLabel]="vel_yAxisLabel"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [showGridLines]="vel_showGridLines"
+                    [barPadding]="vel_barPadding"
+                    [groupPadding]="vel_groupPadding"
+                    [roundDomains]="vel_roundDomains"
+                    (select)="select($event)">
+                  </ngx-charts-bar-vertical-2d>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">Tempo de Atendimento</div>
+              <div class="card-body">
+                <div>
+                  <small class="text-muted">[ número de dias do "eu quero" ao "obrigado" ]</small>
+                  <ngx-charts-line-chart
+                    class="chart-container"
+                    [scheme]="tat_colorScheme"
+                    [schemeType]="tat_schemeType"
+                    [results]="tmpAtendimento"
+                    [legend]="tat_showLegend"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [gradient]="tat_gradient"
+                    [xAxis]="tat_showXAxis"
+                    [yAxis]="tat_showYAxis"
+                    [showXAxisLabel]="tat_showXAxisLabel"
+                    [showYAxisLabel]="tat_showYAxisLabel"
+                    [xAxisLabel]="tat_xAxisLabel"
+                    [yAxisLabel]="tat_yAxisLabel"
+                    [autoScale]="tat_autoScale"
+                    [timeline]="tat_timeline"
+                    [showGridLines]="tat_showGridLines"
+                    [curve]="tat_curve"
+                    [rangeFillOpacity]="tat_rangeFillOpacity"
+                    [roundDomains]="tat_roundDomains"
+                    [tooltipDisabled]="tat_tooltipDisabled"
+                    (select)="select($event)">
+                  </ngx-charts-line-chart>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header"></div>
+              <div class="card-body">
+                <div>
+                  <ngx-charts-number-card
+                    class="chart-container"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [scheme]="colorScheme"
+                    [results]="eficiencia"
+                    (select)="select($event)">
+                  </ngx-charts-number-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////
+LINHA 3 ---------------------------------------------------------------------------------------------->
+
+<div class="row">
+  <!-- Efetividade -->
+  <div class="col-sm-12 col-md-12">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-title">
+            <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de</small> <strong>Efetividade</strong></h3>
+            <small class="text-muted">Estamos gerando o valor esperado?</small>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row text-center">
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">Satisfação do Usuário</div>
+              <div class="card-body">
+                <div>
+                  <small class="text-muted">[ resultados das pesquisas com o usuário ]</small>
+                  <ngx-charts-pie-chart class="chart-container"
+                                        [scheme]="sat_colorScheme"
+                                        [results]="satisfacaoUsuario"
+                                        [legend]="sat_showLegend"
+                                        [explodeSlices]="sat_explodeSlices"
+                                        [labels]="sat_showLabels"
+                                        [doughnut]="sat_doughnut"
+                                        [arcWidth]="sat_arcWidth"
+                                        (legendLabelClick)="onLegendLabelClick($event)"
+                                        [gradient]="sat_gradient"
+                                        [tooltipDisabled]="sat_tooltipDisabled"
+                                        (select)="select($event)">
+                  </ngx-charts-pie-chart>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">Perspectiva de Valor</div>
+              <div class="card-body">
+                <div>
+                  <small class="text-muted">[ resultado das pesquisas com os tomadores de decisão ]</small>
+                  <ngx-charts-pie-chart
+                    class="chart-container"
+                    [scheme]="per_colorScheme"
+                    [results]="expectativaValor"
+                    [legend]="per_showLegend"
+                    [explodeSlices]="per_explodeSlices"
+                    [labels]="per_showLabels"
+                    [doughnut]="per_doughnut"
+                    [arcWidth]="per_arcWidth"
+                    (legendLabelClick)="onLegendLabelClick($event)"
+                    [gradient]="per_gradient"
+                    [tooltipDisabled]="per_tooltipDisabled"
+                    (select)="select($event)">
+                  </ngx-charts-pie-chart>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////
+LINHA 4 ---------------------------------------------------------------------------------------------->
+
+<div class="row">
+  <!-- Maturidade -->
+  <div class="col-sm-12 col-md-12">
+    <div class="card">
+      <div class="card-header no-shadow">
+          <div class="card-header-text w-100">
+            <div class="card-title">
+                <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Maturidade</strong></h3>
+                <small class="text-muted">Estamos pensando no futuro?</small>
+            </div>
+            <div class="card-body">
+              <div align-content="center">
+                <ngx-charts-gauge (legendlabelclick)="onLegendLabelClick($event)"
+                                  (select)="select($event)"
+                                  [angleSpan]="mat_gaugeAngleSpan"
+                                  [bigSegments]="mat_gaugeLargeSegments"
+                                  [legend]="mat_showLegend"
+                                  [margin]="mat_margin ? [mat_marginTop, mat_marginRight, mat_marginBottom, mat_marginLeft] : null"
+                                  [max]="mat_gaugeMax"
+                                  [min]="mat_gaugeMin"
+                                  [results]="maturidade"
+                                  [scheme]="mat_colorScheme"
+                                  [showAxis]="mat_gaugeShowAxis"
+                                  [smallSegments]="mat_gaugeSmallSegments"
+                                  [startAngle]="mat_gaugeStartAngle"
+                                  [textValue]="mat_gaugeTextValue"
+                                  [tooltipDisabled]="mat_tooltipDisabled"
+                                  [units]="mat_gaugeUnits"
+                                  class="gauge-container">
+                </ngx-charts-gauge>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////
+LINHA 5 ---------------------------------------------------------------------------------------------->
+
+<div class="row">
+  <!-- Clima -->
+  <div class="col-sm-12 col-md-12">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-header-text w-100">
+          <div class="card-title">
+            <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Clima</strong></h3>
+            <small class="text-muted">Temos um bom ambiente de trabalho?</small>
+          </div>
+          <div class="mb-1">
+            <ngx-charts-bar-vertical class="chart-container"
+                                     [scheme]="ter_colorScheme"
+                                     [schemeType]="ter_schemeType"
+                                     [results]="termometro"
+                                     [gradient]="ter_gradient"
+                                     [xAxis]="ter_showXAxis"
+                                     [yAxis]="ter_showYAxis"
+                                     [legend]="ter_showLegend"
+                                     [showXAxisLabel]="ter_showXAxisLabel"
+                                     [showYAxisLabel]="ter_showYAxisLabel"
+                                     [tooltipDisabled]="ter_tooltipDisabled"
+                                     [xAxisLabel]="ter_xAxisLabel"
+                                     [yAxisLabel]="ter_yAxisLabel"
+                                     [showGridLines]="ter_showGridLines"
+                                     [barPadding]="ter_barPadding"
+                                     [roundDomains]="ter_roundDomains"
+                                     (select)="select($event)"
+                                     (legendLabelClick)="onLegendLabelClick($event)">
+              </ngx-charts-bar-vertical>
+          </div>
+          <div class="card">
+            <div class="card-header no-shadow">
+              Planos de ação
+            </div>
+            <div>
+            <ul class="list-group border-0">
+              <li class="list-group-item border-left-0 border-right-0">
+                <div class="d-flex justify-content-left">
+                  <div class="pl-3">
+                    - Revisar a definição de pronto<small class="text-muted">
+                       (10/10/2017 - 15/12/2017)
+                    </small>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-left-0 border-right-0">
+                <div class="d-flex justify-content-left">
+                  <div class="pl-3">
+                    - Realizar integração de natal<small class="text-muted">
+                       (10/10/2017 - 15/12/2017)
+                    </small>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-left-0 border-right-0  border-bottom-0">
+                <div class="d-flex justify-content-left">
+                  <div class="pl-3">
+                    - Implementar WIP<small class="text-muted">
+                       (10/10/2017 - 15/12/2017)
+                    </small>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

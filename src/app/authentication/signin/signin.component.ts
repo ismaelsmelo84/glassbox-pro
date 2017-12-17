@@ -19,7 +19,7 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate ( [ '/' ] );
+    this.router.navigate ( [ '/dashboard' ] );
   }
 
 }

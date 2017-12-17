@@ -1,4 +1,4 @@
-Diagnóstico | Progresso | <b>Desempenho</b><p>
+<a class="btn btn-outline-primary btn-link" href="dashboard-portfolio" [routerLink]="['../diagnostico']">Diagnóstico</a> | <a class="btn btn-outline-primary btn-link" href="dashboard-portfolio" [routerLink]="['../progresso']">Progresso</a> | <a class="btn btn-outline-primary btn-link" href="dashboard-portfolio" [routerLink]="['../desempenho']">Desempenho</a><p>
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////
 LINHA 0 ---------------------------------------------------------------------------------------------->
@@ -10,7 +10,9 @@ LINHA 0 ------------------------------------------------------------------------
         <div class="mr-auto">
           <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Time de </small><strong>Contas</strong></h3>
           <h6 class="mt-0 mb-0 fw-400"><i>Produtos Bancários</i></h6>
-          <p class="text-muted mt-0 mb-0">Sicredi - SM: José Maria</p>
+          <p>
+          <p class="text-muted mt-0 mb-0">Confederação Sicredi</p>
+          <ngb-rating ([rate])="currentRate"></ngb-rating>
         </div>
         <div>
           <img src="assets/images/avatar.jpg" class="avatar-md rounded-circle" alt="">
@@ -31,6 +33,8 @@ LINHA 0 ------------------------------------------------------------------------
             </div>
           </div>
         </div>
+
+        <p>
 
         <div class="row mb-2">
           <div class="col">
@@ -96,22 +100,24 @@ LINHA 0 ------------------------------------------------------------------------
   </div>
   <div class="col-md-7">
     <div class="card no-bg">
-      <div class="card-body text-center rounded" style="background-image: url('assets/images/unsplash/2.jpg')">
-        <img alt="" class="avatar-lg rounded-circle d-block mx-auto mb-3" src="assets/images/face4.jpg"/>
-        <button class="btn btn-secondary btn-sm mb-3">
-          Follow
-        </button>
+      <div class="card-body text-center rounded">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="radarChartData"
+                  [labels]="radarChartLabels"
+                  [chartType]="radarChartType"
+                  [options]="lineChartOptions"
+                  [legend]="lineChartLegend"
+                  [colors]="lineChartColors"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+          </canvas>
+          <small class="text-muted"><i>* Plano de Desenvolvimento Coletivo </i><p></small>
+          <p>
+        </div>
       </div>
       <div class="card-body pt-3 pb-3 ml-3 mr-3 bg-indigo text-white rounded" style="margin-top: -15px;">
         <div class="row text-center">
-          <div class="col">
-            <div class="h6 no-margin">
-              62
-            </div>
-            <div class="small bold text-uppercase">
-              Sprints
-            </div>
-          </div>
           <div class="col">
             <div class="h6 no-margin">
               9800
@@ -128,36 +134,19 @@ LINHA 0 ------------------------------------------------------------------------
               MVPs
             </div>
           </div>
+            <div class="col">
+              <div class="h6 no-margin">
+                62
+              </div>
+              <div class="small bold text-uppercase">
+                Sprints
+              </div>
+            </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-<!--
-
-
-<div class="mb-5">
-  <ngb-tabset>
-    <ngb-tab title="Simple">
-      <ng-template ngbTabContent>Simple content</ng-template>
-    </ngb-tab>
-    <ngb-tab>
-      <ng-template ngbTabTitle><b>Fancy</b> title</ng-template>
-      <ng-template ngbTabContent>Fancy title content</ng-template>
-    </ngb-tab>
-    <ngb-tab title="Disabled" [disabled]="true">
-      <ng-template ngbTabContent>Disabled content</ng-template>
-    </ngb-tab>
-  </ngb-tabset>
-</div>
-
--->
-
-
-<!-- //////////////////////////////////////////////////////////////////////////////////////////////////
-LINHA 1 ---------------------------------------------------------------------------------------------->
 
 <div class="row">
   <!-- Eficácia -->
@@ -167,6 +156,7 @@ LINHA 1 ------------------------------------------------------------------------
         <div class="card-header-text w-100">
           <div class="card-title">
             <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Eficácia</strong></h3>
+            <small class="text-muted">Estamos fazendo o trabalho conforme nos comprometemos?</small>
           </div>
         </div>
       </div>
@@ -177,33 +167,7 @@ LINHA 1 ------------------------------------------------------------------------
               <div class="card-header">Atingimento das Metas</div>
               <div class="card-body">
                 <div>
-                  <!--
-                  <ngx-charts-polar-chart
-                          class="chart-container"
-                          [view]="rad_view"
-                          [scheme]="rad_colorScheme"
-                          [schemeType]="rad_schemeType"
-                          [results]="multi"
-                          [legend]="rad_showLegend"
-                          [legendTitle]="rad_legendTitle"
-                          (legendLabelClick)="onLegendLabelClick($event)"
-                          [gradient]="rad_gradient"
-                          [xAxis]="rad_showXAxis"
-                          [yAxis]="rad_showYAxis"
-                          [showXAxisLabel]="rad_showXAxisLabel"
-                          [showYAxisLabel]="rad_showYAxisLabel"
-                          [xAxisLabel]="rad_xAxisLabel"
-                          [yAxisLabel]="rad_yAxisLabel"
-                          [autoScale]="rad_autoScale"
-                          [showGridLines]="rad_showGridLines"
-                          [rangeFillOpacity]="rad_rangeFillOpacity"
-                          [roundDomains]="rad_roundDomains"
-                          [tooltipDisabled]="rad_tooltipDisabled"
-                          [showSeriesOnHover]="rad_showSeriesOnHover"
-                          [curve]="rad_closedCurve"
-                          (select)="select($event)">
-                  </ngx-charts-polar-chart>
-                  -->
+                  <small class="text-muted">[ % aceito do que foi entregue ]</small>
                   <ngx-charts-advanced-pie-chart
                     class="chart-container"
                     [scheme]="atm_colorScheme"
@@ -222,6 +186,7 @@ LINHA 1 ------------------------------------------------------------------------
               <div class="card-header">Qualidade nas Entregas</div>
               <div class="card-body">
                 <div>
+                  <small class="text-muted">[ quantidade e % inconformidades, por ambiente ]</small>
                   <ngx-charts-pie-grid
                     class="chart-container"
                     [scheme]="qua_colorScheme"
@@ -247,15 +212,14 @@ LINHA 2 ------------------------------------------------------------------------
   <!-- Eficiência -->
   <div class="col-sm-12 col-md-12">
     <div class="card">
-
       <div class="card-header no-shadow">
         <div class="card-header-text w-100">
           <div class="card-title">
             <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Eficiência</strong></h3>
+            <small class="text-muted">Estamos otimizando o uso dos recursos?</small>
           </div>
         </div>
       </div>
-
       <div class="card-body">
         <div class="row text-center">
           <div class="col-xs-12 col-sm-6">
@@ -263,6 +227,7 @@ LINHA 2 ------------------------------------------------------------------------
               <div class="card-header">Custo</div>
               <div class="card-body">
                 <div>
+                  <small class="text-muted">[ custo médio da unidade construída ]</small>
                   <ngx-charts-bar-vertical-stacked
                     class="chart-container"
                     [scheme]="cus_colorScheme"
@@ -292,6 +257,7 @@ LINHA 2 ------------------------------------------------------------------------
               <div class="card-header">Produtividade</div>
               <div class="card-body">
                 <div>
+                  <small class="text-muted">[ horas para o desenvolvimento de uma unidade ]</small>
                   <ngx-charts-line-chart
                     class="chart-container"
                     [scheme]="pro_colorScheme"
@@ -327,6 +293,7 @@ LINHA 2 ------------------------------------------------------------------------
               <div class="card-header">Taxa de Entrega</div>
               <div class="card-body">
                 <div>
+                  <small class="text-muted">[ unidades desenvolvidas no período, por membro do time ]</small>
                   <ngx-charts-line-chart
                     class="chart-container"
                     [scheme]="txe_colorScheme"
@@ -360,6 +327,7 @@ LINHA 2 ------------------------------------------------------------------------
               <div class="card-header">Velocidade</div>
               <div class="card-body">
                 <div>
+                  <small class="text-muted">[ unidades desenvolvidas por sprint ]</small>
                   <ngx-charts-bar-vertical-2d
                     class="chart-container"
                     [scheme]="vel_colorScheme"
@@ -393,6 +361,7 @@ LINHA 2 ------------------------------------------------------------------------
               <div class="card-header">Tempo de Atendimento</div>
               <div class="card-body">
                 <div>
+                  <small class="text-muted">[ número de dias do "eu quero" ao "obrigado" ]</small>
                   <ngx-charts-line-chart
                     class="chart-container"
                     [scheme]="tat_colorScheme"
@@ -446,11 +415,14 @@ LINHA 2 ------------------------------------------------------------------------
 LINHA 3 ---------------------------------------------------------------------------------------------->
 
 <div class="row">
-  <!-- Eficácia -->
+  <!-- Efetividade -->
   <div class="col-sm-12 col-md-12">
     <div class="card">
       <div class="card-header no-shadow">
-        <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de</small> <strong>Efetividade</strong></h3>
+        <div class="card-title">
+            <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de</small> <strong>Efetividade</strong></h3>
+            <small class="text-muted">Estamos gerando o valor esperado?</small>
+        </div>
       </div>
       <div class="card-body">
         <div class="row text-center">
@@ -459,6 +431,7 @@ LINHA 3 ------------------------------------------------------------------------
               <div class="card-header">Satisfação do Usuário</div>
               <div class="card-body">
                 <div>
+                  <small class="text-muted">[ resultados das pesquisas com o usuário ]</small>
                   <ngx-charts-pie-chart class="chart-container"
                                         [scheme]="sat_colorScheme"
                                         [results]="satisfacaoUsuario"
@@ -481,6 +454,7 @@ LINHA 3 ------------------------------------------------------------------------
               <div class="card-header">Perspectiva de Valor</div>
               <div class="card-body">
                 <div>
+                  <small class="text-muted">[ resultado das pesquisas com os tomadores de decisão ]</small>
                   <ngx-charts-pie-chart
                     class="chart-container"
                     [scheme]="per_colorScheme"
@@ -509,291 +483,115 @@ LINHA 3 ------------------------------------------------------------------------
 LINHA 4 ---------------------------------------------------------------------------------------------->
 
 <div class="row">
-  <div class="col-lg-6">
+  <!-- Maturidade -->
+  <div class="col-sm-12 col-md-12">
     <div class="card">
       <div class="card-header no-shadow">
-        <div class="card-header-text w-100">
-          <div class="card-title">
-              <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Maturidade</strong></h3>
-          </div>
-          <div class="card-body">
-            <div align-content="center">
-              <ngx-charts-gauge (legendlabelclick)="onLegendLabelClick($event)"
-                                (select)="select($event)"
-                                [angleSpan]="mat_gaugeAngleSpan"
-                                [bigSegments]="mat_gaugeLargeSegments"
-                                [legend]="mat_showLegend"
-                                [margin]="mat_margin ? [mat_marginTop, mat_marginRight, mat_marginBottom, mat_marginLeft] : null"
-                                [max]="mat_gaugeMax"
-                                [min]="mat_gaugeMin"
-                                [results]="maturidade"
-                                [scheme]="mat_colorScheme"
-                                [showAxis]="mat_gaugeShowAxis"
-                                [smallSegments]="mat_gaugeSmallSegments"
-                                [startAngle]="mat_gaugeStartAngle"
-                                [textValue]="mat_gaugeTextValue"
-                                [tooltipDisabled]="mat_tooltipDisabled"
-                                [units]="mat_gaugeUnits"
-                                class="gauge-container">
-              </ngx-charts-gauge>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Clima -->
-  <div class="col-lg-6">
-    <div class="card">
-        <div class="card-header no-shadow">
           <div class="card-header-text w-100">
             <div class="card-title">
-                <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Clima</strong></h3>
+                <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Maturidade</strong></h3>
+                <small class="text-muted">Estamos pensando no futuro?</small>
             </div>
-            <div class="mb-1">
-              <ngx-charts-bar-vertical class="chart-container"
-                                       [scheme]="ter_colorScheme"
-                                       [schemeType]="ter_schemeType"
-                                       [results]="termometro"
-                                       [gradient]="ter_gradient"
-                                       [xAxis]="ter_showXAxis"
-                                       [yAxis]="ter_showYAxis"
-                                       [legend]="ter_showLegend"
-                                       [showXAxisLabel]="ter_showXAxisLabel"
-                                       [showYAxisLabel]="ter_showYAxisLabel"
-                                       [tooltipDisabled]="ter_tooltipDisabled"
-                                       [xAxisLabel]="ter_xAxisLabel"
-                                       [yAxisLabel]="ter_yAxisLabel"
-                                       [showGridLines]="ter_showGridLines"
-                                       [barPadding]="ter_barPadding"
-                                       [roundDomains]="ter_roundDomains"
-                                       (select)="select($event)"
-                                       (legendLabelClick)="onLegendLabelClick($event)">
-                </ngx-charts-bar-vertical>
-            </div>
-            <div class="card">
-              <div class="card-header no-shadow">
-                Planos de ação
+            <div class="card-body">
+              <div align-content="center">
+                <ngx-charts-gauge (legendlabelclick)="onLegendLabelClick($event)"
+                                  (select)="select($event)"
+                                  [angleSpan]="mat_gaugeAngleSpan"
+                                  [bigSegments]="mat_gaugeLargeSegments"
+                                  [legend]="mat_showLegend"
+                                  [margin]="mat_margin ? [mat_marginTop, mat_marginRight, mat_marginBottom, mat_marginLeft] : null"
+                                  [max]="mat_gaugeMax"
+                                  [min]="mat_gaugeMin"
+                                  [results]="maturidade"
+                                  [scheme]="mat_colorScheme"
+                                  [showAxis]="mat_gaugeShowAxis"
+                                  [smallSegments]="mat_gaugeSmallSegments"
+                                  [startAngle]="mat_gaugeStartAngle"
+                                  [textValue]="mat_gaugeTextValue"
+                                  [tooltipDisabled]="mat_tooltipDisabled"
+                                  [units]="mat_gaugeUnits"
+                                  class="gauge-container">
+                </ngx-charts-gauge>
               </div>
-              <div>
-              <ul class="list-group border-0">
-                <li class="list-group-item border-left-0 border-right-0">
-                  <div class="d-flex justify-content-left">
-                    <div class="pl-3">
-                      <span class="d-block">
-                        Revisar a definição de pronto
-                      </span>
-                      <small class="text-muted">
-                        12/11 - 15/01
-                      </small>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-left-0 border-right-0">
-                  <div class="d-flex justify-content-left">
-                    <div class="pl-3">
-                      <span class="d-block">
-                        Realizar integração de Natal
-                      </span>
-                      <small class="text-muted">
-                        12/11 - 15/01
-                      </small>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-left-0 border-right-0  border-bottom-0">
-                  <div class="d-flex justify-content-left">
-                    <div class="pl-3">
-                      <span class="d-block">
-                        Implementar WIP no Kanban
-                      </span>
-                      <small class="text-muted">
-                        12/11 - 15/01
-                      </small>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
             </div>
           </div>
-        </div>
       </div>
+    </div>
   </div>
 </div>
-<!--
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////
+LINHA 5 ---------------------------------------------------------------------------------------------->
+
 <div class="row">
-  <div class="col-lg-5">
+  <!-- Clima -->
+  <div class="col-sm-12 col-md-12">
     <div class="card">
       <div class="card-header no-shadow">
         <div class="card-header-text w-100">
           <div class="card-title">
-            Social Feed
+            <h3 class="mt-0 mb-0 text-uppercase"><small class="fw-300">Domínio de </small><strong>Clima</strong></h3>
+            <small class="text-muted">Temos um bom ambiente de trabalho?</small>
           </div>
-          <div class="card-subtitle text-capitalize ff-sans">
-            Atualização: 1 hora
+          <div class="mb-1">
+            <ngx-charts-bar-vertical class="chart-container"
+                                     [scheme]="ter_colorScheme"
+                                     [schemeType]="ter_schemeType"
+                                     [results]="termometro"
+                                     [gradient]="ter_gradient"
+                                     [xAxis]="ter_showXAxis"
+                                     [yAxis]="ter_showYAxis"
+                                     [legend]="ter_showLegend"
+                                     [showXAxisLabel]="ter_showXAxisLabel"
+                                     [showYAxisLabel]="ter_showYAxisLabel"
+                                     [tooltipDisabled]="ter_tooltipDisabled"
+                                     [xAxisLabel]="ter_xAxisLabel"
+                                     [yAxisLabel]="ter_yAxisLabel"
+                                     [showGridLines]="ter_showGridLines"
+                                     [barPadding]="ter_barPadding"
+                                     [roundDomains]="ter_roundDomains"
+                                     (select)="select($event)"
+                                     (legendLabelClick)="onLegendLabelClick($event)">
+              </ngx-charts-bar-vertical>
           </div>
-        </div>
-      </div>
-      <div class="activity-stream">
-        <div class="card">
-          <div class="card-header">
-            <img class="card-avatar" src="assets/images/face1.jpg"/>
-            <div class="card-header-text">
-              <div class="card-title">
-                Received a call from Joel
-              </div>
-              <div class="card-subtitle">
-                at 3:14PM
-              </div>
+          <div class="card">
+            <div class="card-header no-shadow">
+              Planos de ação
+            </div>
+            <div>
+            <ul class="list-group border-0">
+              <li class="list-group-item border-left-0 border-right-0">
+                <div class="d-flex justify-content-left">
+                  <div class="pl-3">
+                    - Revisar a definição de pronto<small class="text-muted">
+                       (10/10/2017 - 15/12/2017)
+                    </small>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-left-0 border-right-0">
+                <div class="d-flex justify-content-left">
+                  <div class="pl-3">
+                    - Realizar integração de natal<small class="text-muted">
+                       (10/10/2017 - 15/12/2017)
+                    </small>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-left-0 border-right-0  border-bottom-0">
+                <div class="d-flex justify-content-left">
+                  <div class="pl-3">
+                    - Implementar WIP<small class="text-muted">
+                       (10/10/2017 - 15/12/2017)
+                    </small>
+                  </div>
+                </div>
+              </li>
+            </ul>
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header">
-            <img class="card-avatar" src="assets/images/face2.jpg"/>
-            <div class="card-header-text">
-              <div class="card-title">
-                Added Ellie to Group
-              </div>
-              <div class="card-subtitle">
-                5 mins ago
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p class="mb-0">
-              Nullam id dolor id nibh ultricies vehicula ut id elit.
-            </p>
-          </div>
-        </div>
       </div>
-    </div>
-  </div>
-  <div class="col-lg-3">
-    <div class="card bg-purple card-inverse">
-      <div class="card-header">
-        KPI
-      </div>
-      <div class="card-body">
-        <ul class="list-unstyled mb-0">
-          <li>
-            <label class="custom-control custom-checkbox mb-2">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Learn Angular 4
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox mb-2">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Update Vue.JS
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox">
-              <input class="custom-control-input" type="checkbox">
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Add ReactJS
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox mb-2">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Upgrade Ember
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox mb-2">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Read on Meteor
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Commit Riot changes
-              </span>
-            </label>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 col-xl-4">
-    <div class="card">
-      <div class="card-header no-shadow">
-        News Feed
-      </div>
-      <ul class="list-group border-0">
-        <li class="list-group-item border-left-0 border-right-0">
-          <div class="d-flex justify-content-center">
-            <a class="pull-left avatar-sm" href="javascript:;">
-              <img class="img-fluid" src="assets/images/face4.jpg"/>
-            </a>
-            <div class="pl-3">
-              <span class="d-block">
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </span>
-              <small class="text-muted">
-                Yesterday
-              </small>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item border-left-0 border-right-0">
-          <div class="d-flex justify-content-center">
-            <a class="pull-left avatar-sm" href="javascript:;">
-              <img class="img-fluid" src="assets/images/face5.jpg"/>
-            </a>
-            <div class="pl-3">
-              <span class="d-block">
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </span>
-              <small class="text-muted">
-                Yesterday
-              </small>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item border-left-0 border-right-0  border-bottom-0">
-          <div class="d-flex justify-content-center">
-            <a class="pull-left avatar-sm" href="javascript:;">
-              <img class="img-fluid" src="assets/images/face1.jpg">
-            </a>
-            <div class="pl-3">
-              <span class="d-block">
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </span>
-              <small class="text-muted">
-                Yesterday
-              </small>
-            </div>
-          </div>
-        </li>
-      </ul>
     </div>
   </div>
 </div>
--->

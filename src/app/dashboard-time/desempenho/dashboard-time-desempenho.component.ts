@@ -2,32 +2,30 @@ import { Component } from '@angular/core';
 import * as shape from 'd3-shape';
 import * as d3 from 'd3';
 import { colorSets  } from '@swimlane/ngx-charts/release/utils/color-sets';
-import {
-  atingimentoMetas, qualidade,
-  custoPf, produtividade, velocidade, txEntrega, tmpAtendimento, eficiencia,
-  satisfacaoUsuario, expectativaValor,
-  maturidade,
-  termometro,
-  generateData, multi, consolidado
-} from '../shared/chartData';
+import { atingimentoMetas, qualidade,
+         custoPf, produtividade, velocidade, txEntrega, tmpAtendimento, eficiencia,
+         satisfacaoUsuario, expectativaValor,
+         maturidade,
+         termometro,
+         generateData, multi, consolidado, radargraf } from '../../shared/chartData';
 import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { scaleLinear, scaleTime, scalePoint } from 'd3-scale';
 import { curveCardinalClosed } from 'd3-shape';
-
+import { ChartsModule } from 'ng2-charts';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-dashboard-time',
-  templateUrl: './dashboard-time.component.html',
-  styleUrls: ['./dashboard-time.component.scss']
+  selector: 'app-dashboard-time-desempenho',
+  templateUrl: './dashboard-time-desempenho.component.html',
+  styleUrls: ['./dashboard-time-desempenho.component.scss']
 })
 
-export class DashboardTimeComponent {
+export class DashboardTimeDesempenhoComponent {
 
-  //--------------------------------------------------------------------------
-
+  //-------------------------------------------------------------------------
   // GRUPOS DE DADOS
   t: any;
-
+  radargraf: any[];
   atingimentoMetas: any[];
   qualidade: any[];
   custoPf: any[];
@@ -50,76 +48,57 @@ export class DashboardTimeComponent {
   dateDataWithRange: any[];
   range = false;
 
-  //--------------------------------------------------------------------------
-
-  // RADAR (em testes)
-
-    rad_view: any[];
-    rad_width: number = 700;
-    rad_height: number = 300;
-    rad_fitContainer: boolean = false;
-    rad_autoScale = true;
-    rad_showYAxis = true;
-    rad_showXAxis = true;
-    rad_gradient = false;
-    rad_showLegend = true;
-    rad_legendTitle = 'Legend';
-    rad_showXAxisLabel = true;
-    rad_tooltipDisabled = false;
-    rad_xAxisLabel = 'Country';
-    rad_showYAxisLabel = true;
-    rad_yAxisLabel = 'GDP Per Capita';
-    rad_showGridLines = true;
-    rad_innerPadding = '10%';
-    rad_barPadding = 8;
-    rad_groupPadding = 16;
-    rad_roundDomains = true;
-    rad_maxRadius = 10;
-    rad_minRadius = 3;
-    rad_showSeriesOnHover = true;
-    rad_roundEdges = true;
-    rad_animations = false;
-    rad_xScaleMin: any;
-    rad_xScaleMax: any;
-    rad_yScaleMin: number;
-    rad_yScaleMax: number;
-    rad_curves = {
-      Basis: shape.curveBasis,
-      'Basis Closed': shape.curveBasisClosed,
-      Bundle: shape.curveBundle.beta(1),
-      Cardinal: shape.curveCardinal,
-      'Cardinal Closed': shape.curveCardinalClosed,
-      'Catmull Rom': shape.curveCatmullRom,
-      'Catmull Rom Closed': shape.curveCatmullRomClosed,
-      Linear: shape.curveLinear,
-      'Linear Closed': shape.curveLinearClosed,
-      'Monotone X': shape.curveMonotoneX,
-      'Monotone Y': shape.curveMonotoneY,
-      Natural: shape.curveNatural,
-      Step: shape.curveStep,
-      'Step After': shape.curveStepAfter,
-      'Step Before': shape.curveStepBefore,
-      default: shape.curveLinear
+  //-------------------------------------------------------------------------
+  // RADAR DO TIME (com NG2/ Chart.JS)
+  radarChartLabels:string[] = ['Eficácia', 'Eficiência', 'Efetividade', 'Maturidade', 'Clima'];
+  lineChartOptions:any = {
+        responsive: true,
+        scale: {
+          ticks: {
+              responsive: true,
+              beginAtZero: true,
+              min: 0,
+              max: 5
+          }
+        },
+        pointLabels: {
+          fontSize: 18
+        }
     };
-    rad_curveType: string = 'Linear';
-    rad_curve: any = this.rad_curves[this.rad_curveType];
-    rad_interpolationTypes = [
-      'Basis', 'Bundle', 'Cardinal', 'Catmull Rom', 'Linear', 'Monotone X',
-      'Monotone Y', 'Natural', 'Step', 'Step After', 'Step Before'
+  lineChartLegend: boolean = false;
+  radarChartData:any = [{
+                          data: [3, 2, 4, 3, 3],
+                          label: ' Contas'
+                        }];
+  radarChartType:string = 'radar';
+  lineChartColors: Array<any> = [
+        { // grey
+            backgroundColor: 'rgba(148,159,177,0.2)',
+            borderColor: 'rgba(148,159,177,1)',
+            pointBackgroundColor: 'rgba(148,159,177,1)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+        },
+        { // dark grey
+            backgroundColor: 'rgba(77,83,96,0.2)',
+            borderColor: 'rgba(77,83,96,1)',
+            pointBackgroundColor: 'rgba(77,83,96,1)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(77,83,96,1)'
+        },
+        { // grey
+            backgroundColor: 'rgba(148,159,177,0.2)',
+            borderColor: 'rgba(148,159,177,1)',
+            pointBackgroundColor: 'rgba(148,159,177,1)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+        }
     ];
-    rad_closedCurveType: string = 'Linear Closed';
-    rad_closedCurve: any = this.rad_curves[this.rad_closedCurveType];
-    rad_closedInterpolationTypes = [
-      'Basis Closed', 'Cardinal Closed', 'Catmull Rom Closed', 'Linear Closed'
-    ];
-    rad_colorSets: any;
-    rad_colorScheme: any;
-    rad_schemeType: string = 'ordinal';
-    rad_selectedColorScheme: string;
-    rad_rangeFillOpacity: number = 0.15;
 
-  //--------------------------------------------------------------------------
-
+  //-------------------------------------------------------------------------
   // EFICÁCIA: "Atingimento das Metas"
   atm_tooltipDisabled = false;
   atm_gradient = false;
@@ -137,7 +116,6 @@ export class DashboardTimeComponent {
   };
 
   //--------------------------------------------------------------------------
-
   // EFETIVIDADE: "Satisfação do Usuário"
   sat_gradient = false;
   sat_tooltipDisabled = true
@@ -337,13 +315,13 @@ export class DashboardTimeComponent {
   ter_showYAxis = true;
   ter_gradient = false;
   ter_showLegend = false;
-  ter_showXAxisLabel = true;
+  ter_showXAxisLabel = false;
   ter_tooltipDisabled = false;
   ter_xAxisLabel = 'Sprint';
-  ter_showYAxisLabel = true;
+  ter_showYAxisLabel = false;
   ter_yAxisLabel = 'Graus';
   ter_showGridLines = true;
-  ter_barPadding = 10;
+  ter_barPadding = 60;
   ter_roundDomains = false;
   ter_schemeType = 'ordinal';
   ter_colorScheme = {
@@ -352,15 +330,24 @@ export class DashboardTimeComponent {
     ]
   };
 
+  // RATING
+  rat_currentRate = 8;
+  rat_selected = 0;
+  rat_hovered = 0;
+  rat_readonly = false;
+  rat_decimalCurrentRate = 3.14;
+  rat_ctrl = new FormControl(null, Validators.required);
+
   // CONSTRUTOR
   constructor() {
+
     Object.assign(this, {
       atingimentoMetas, qualidade,
       custoPf, produtividade, txEntrega, velocidade, tmpAtendimento, eficiencia,
       satisfacaoUsuario, expectativaValor,
       maturidade,
       termometro,
-      multi, consolidado
+      multi, consolidado, radargraf
     });
     this.dateData = generateData(5, false);
     this.dateDataWithRange = generateData(2, true);
@@ -386,6 +373,25 @@ export class DashboardTimeComponent {
   public beforeChange($event: NgbTabChangeEvent) {
     if ($event.nextId === 'bar') {
       $event.preventDefault();
+    }
+  }
+
+  // event for ng2
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+
+  // event for ng2
+  public chartHovered(e:any):void {
+    console.log(e);
+  }
+
+  // method for rating
+  toggle() {
+    if (this.rat_ctrl.disabled) {
+      this.rat_ctrl.enable();
+    } else {
+      this.rat_ctrl.disable();
     }
   }
 

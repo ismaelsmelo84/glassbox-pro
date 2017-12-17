@@ -4,25 +4,25 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <img src="assets/images/logo.png" class="avatar-xs mb-1" alt="">
-        <p class="ff-headers text-uppercase">Create an account</p>
+        <p class="ff-headers text-uppercase">Criar conta Grátis</p>
       </div>
       <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}">
         <label for="username">
-          Choose a username
+          Escolha um nome do usuário:
         </label>
         <input type="text" class="form-control" placeholder="username" [formControl]="form.controls['uname']" [ngClass]="{'form-control-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}"/>
         <div class="form-control-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched">Username is required.</div>
       </fieldset>
       <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}">
         <label for="password">
-          Enter your password
+          Informe a senha desejada:
         </label>
         <input type="password" class="form-control" placeholder="********" [formControl]="form.controls['password']" [ngClass]="{'form-control-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}"/>
         <div class="form-control-feedback" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">Password is required.</div>
       </fieldset>
       <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched}">
         <label for="password">
-          Confirm your password
+          Confirme a senha informada:
         </label>
         <input type="password" class="form-control" placeholder="********" [formControl]="form.controls['confirmPassword']" [ngClass]="{'form-control-danger': form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched}"/>
         <div class="form-control-feedback" *ngIf="form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched">Confirm your password.</div>
@@ -30,11 +30,11 @@
       <label class="custom-control custom-checkbox mb-1">
         <input type="checkbox" class="custom-control-input">
         <span class="custom-control-indicator"></span>
-        <span class="custom-control-description">I have read and agree to the terms of service.</span>
+        <span class="custom-control-description">declaro que li e aceito todos os termos de serviço.</span>
       </label>
       <div class="block mb-3"></div>
-      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Create</button>
-      <a class="btn btn-outline-primary btn-link" [routerLink]="['/authentication/signin']">Login!</a>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Criar</button>
+      <a class="btn btn-outline-primary btn-link" [routerLink]="['/signin']">Login!</a>
     </form>
   </div>
 </div>

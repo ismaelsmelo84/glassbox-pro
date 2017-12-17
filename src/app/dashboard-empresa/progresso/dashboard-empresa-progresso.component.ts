@@ -4,15 +4,15 @@ import { colorSets  } from '@swimlane/ngx-charts/release/utils/color-sets';
 import {
   single, capacidade, produtividade,
   generateData
-} from '../shared/chartData';
+} from '../../shared/chartData';
 
 @Component({
-  selector: 'app-dashboard-empresa',
-  templateUrl: './dashboard-empresa.component.html',
-  styleUrls: ['./dashboard-empresa.component.scss']
+  selector: 'app-dashboard-empresa-progresso',
+  templateUrl: './dashboard-empresa-progresso.component.html',
+  styleUrls: ['./dashboard-empresa-progresso.component.scss']
 })
 
-export class DashboardEmpresaComponent {
+export class DashboardEmpresaProgressoComponent {
   images: any[] = [];
   num = 1;
 

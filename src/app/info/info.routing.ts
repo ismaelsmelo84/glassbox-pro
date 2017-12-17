@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { MuralComponent } from './mural/mural.component';
-import { DocsComponent } from './docs/docs.component';
+import { DocumentosComponent } from './documentos/documentos.component';
 import { BoletinsComponent } from './boletins/boletins.component';
 import { LinksComponent } from './links/links.component';
 
@@ -15,8 +15,8 @@ export const InfoRoutes: Routes = [
         heading: 'Mural'
       }
     },{
-      path: 'docs',
-      component: DocsComponent,
+      path: 'documentos',
+      component: DocumentosComponent,
       data: {
         heading: 'Documentos'
       }

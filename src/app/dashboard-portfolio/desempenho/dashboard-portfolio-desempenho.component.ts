@@ -109,6 +109,7 @@ export class DashboardPortfolioDesempenhoComponent {
   };
 
   // EFICÁCIA: "Qualidade nas Entregas"
+  qua_tooltipDisabled = true;
   qua_colorScheme = {
     domain: [
       '#4cc3d9', '#ffc65d', '#d96557'

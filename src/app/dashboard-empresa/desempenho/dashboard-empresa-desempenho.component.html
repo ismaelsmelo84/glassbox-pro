@@ -12,7 +12,7 @@ LINHA 0 ------------------------------------------------------------------------
           <h6 class="mt-0 mb-0 fw-400"><i>Produtos Bancários</i></h6>
           <p>
           <p class="text-muted mt-0 mb-0">Confederação Sicredi</p>
-          <ngb-rating ([rate])="currentRate"></ngb-rating>
+          <ngb-rating ([rate])="rat_currentRate"></ngb-rating>
         </div>
         <div>
           <img src="assets/images/avatar.jpg" class="avatar-md rounded-circle" alt="">
@@ -192,7 +192,7 @@ LINHA 0 ------------------------------------------------------------------------
                     [scheme]="qua_colorScheme"
                     (legendLabelClick)="onLegendLabelClick($event)"
                     [results]="qualidade"
-                    [tooltipDisabled]="f1tooltipDisabled"
+                    [tooltipDisabled]="qua_tooltipDisabled"
                     (select)="select($event)">
                   </ngx-charts-pie-grid>
                 </div>
